@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "DNHS"
 published: true
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "Woo heeseok"
 description              : "An amazing website."
 url                      : "https://hiki-pedia.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
