@@ -12,7 +12,7 @@ sidebar:
 
 ## HTML이란?
 
-<p> 다양한 인터넷 정보를 웹 브라우저에 보여줄 때 사용하는 언어. <br> **H**yer **T**ext **M**arkup **L**anguage </p>
+<p> 다양한 인터넷 정보를 웹 브라우저에 보여줄 때 사용하는 언어. <br> <b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage </p>
 
 ## HTML 구조 파악하기
 
