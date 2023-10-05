@@ -26,7 +26,7 @@ url                      : "https://hiki-pedia.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/images/500x300.png"
-logo                     : "mainlogo.jpg"
+logo                     : "/assets/images/mainlogo.jpg"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 100
