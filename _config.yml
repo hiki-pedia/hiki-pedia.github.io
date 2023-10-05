@@ -18,8 +18,8 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "ko-KR"
 title                    : "DNHS"
 published: true
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+title_separator          : "|"
+subtitle                 : "engineering"
 name                     : "Woo heeseok"
 description              : "An amazing website."
 url                      : "https://hiki-pedia.github.io"
