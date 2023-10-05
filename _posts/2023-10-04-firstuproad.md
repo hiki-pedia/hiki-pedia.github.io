@@ -9,7 +9,7 @@ tags:
 toc : true
 author_profile : false
 sidebar:
-  nav: "docs"
+    nav: "docs"
 ---
 
 ## Why engineering?
