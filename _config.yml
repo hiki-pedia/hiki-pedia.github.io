@@ -293,3 +293,10 @@ defaults:
       related: true
       future: true
       show_date : true
+  #_pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
