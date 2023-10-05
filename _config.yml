@@ -108,7 +108,8 @@ author:
   name             : "Woo heeseok"
   avatar           : "/assets/images/IMG_3964.jpg"
   bio              : "I am a **visionary** man."
-  location         : "Seoul/Korea <br> Jeonju/Korea"
+  location         : "Seoul/Korea"
+  location         : "Jeonju/Korea"
   email            : "milkheesuk@naver.com"
   links:
     - label: "Email"
