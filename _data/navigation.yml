@@ -6,7 +6,7 @@ main:
      url: "category"
    - title: "Tag"
      url: /tags/
-    - title: "Search"
+   - title: "Search"
       url: /search/
 
 docs:
@@ -14,6 +14,6 @@ docs:
     children: 
       - title: "Category"
         url: "category"
-      -title: "Tag"
+      - title: "Tag"
         url: /tags/
 

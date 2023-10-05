@@ -8,7 +8,6 @@ tags:
   - js
 toc : true
 author_profile : false
-sidebar: true
 sidebar:
   nav: "docs"
 ---
