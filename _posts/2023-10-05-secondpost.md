@@ -1,5 +1,7 @@
 ---
 title: "HTML에 대하여(1)"
+headr:
+  overlay_image: "/assets/images/header.jpg"
 categories:
   - frontend
 tags:
@@ -9,6 +11,7 @@ author_profile : false
 sidebar:
   nav: "docs"
 ---
+HTML 기본 문서 만들기
 
 ## HTML이란?
 
@@ -35,7 +38,7 @@ sidebar:
 ```html
 <body> ... </body>
 ```
-<meta>태그는 웹 브라우저에는 보이지 않지만 웹 문서와 관련된 정보를 지정할 때 사용한다. 화면에 글자를 표시할 때 어떤 인코딩을 사용할지 지정하는 것. 웹 서버는 영어가 기본이므로 한글로 된 내용을 표시 할 때는 <b>UTF-8</b>라는 문자 세트를 사용한다.
+meta태그는 웹 브라우저에는 보이지 않지만 웹 문서와 관련된 정보를 지정할 때 사용한다. 화면에 글자를 표시할 때 어떤 인코딩을 사용할지 지정하는 것. 웹 서버는 영어가 기본이므로 한글로 된 내용을 표시 할 때는 <b>UTF-8</b>라는 문자 세트를 사용한다.
 ```html
 <meta charset="UTF-8">
 ```
