@@ -1,6 +1,6 @@
 ---
 title: "HTML에 대하여(1)"
-headr:
+header:
   overlay_image: "/assets/images/header.jpg"
 categories:
   - frontend
