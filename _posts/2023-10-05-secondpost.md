@@ -45,9 +45,9 @@ HTML 기본 문서 만들기
 ```
 <p>&lt;meta&gt;태그 다양하게 사용하기</p>
 ```html
-<meta name="keywords" content="html의 구조">        웹 문서의 키워드
-<meta name="description" content="html의 구조를 알아봅시다.">        웹 문서의 설명
-<meta name="author" content="woo heeseok">        웹 문서의 소유자나 제작자
+<meta name="keywords" content="html의 구조">     //웹 문서의 키워드
+<meta name="description" content="html의 구조를 알아봅시다.">     //웹 문서의 설명
+<meta name="author" content="woo heeseok">     //웹 문서의 소유자나 제작자
 ```
 
 ## HTML파일 만들기
@@ -75,6 +75,31 @@ HTML 기본 문서 만들기
     <ul id="topMenu">
       <li><a href="#">     //내비게이션 영역
 ```
+
+### 핵심 콘텐츠를 담는 태그
+<p>&lt;main&gt;태그는 웹 문서에 핵심이 되는 내용을 담는다. 메뉴, 사이드 바, 로고처럼 페이지마다 같은 내용을 보여주는 정보는 넣을 수 없고, 웹 문서마다 다르게 보여주는 내용으로 구성한다. 웹 문서에서 한 번만 사용할 수 있다.</p>
+
+### 독립적인 콘텐츠를 담는 태그
+<p>&lt;artcle&gt;태그는 실제로 보여주고 싶은 내용을 넣는다. 블로그의 포스트나 뉴스 사이트의 기사처럼 독립된 웹 콘텐츠 항목을 말함. 여러개 사용할 수 있고 이 안에 &lt;section&gt;태그를 넣을 수도 있다.</p>
+
+### 콘텐츠 영역을 나타내는 태그
+<p>&lt;section&gt;태그는 &lt;article&gt;텍그와 비슷해 보일 수 있다. 하지만 &lt;section&gt;태그는 몇 개의 콘텐츠를 묶는 용도로 사용하고 &lt;article&gt;태그는 블로그의 포스트처럼 독립된 콘텐츠로 쓴다.</p>
+
+```html
+(...생략...)
+<main class="contents">
+  <section id="healing">
+    <h2>몸과 마음이 치유되는 섬</h2>
+    .....
+  </section>
+  <section id="activity">
+    <h2>다양한 액티비티가 있는 섬</h2>
+    .....
+  </section>
+</main>
+(...생략...)
+```
+
 
 
 
