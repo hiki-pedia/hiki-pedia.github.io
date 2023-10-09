@@ -74,6 +74,7 @@ HTML 기본 문서 만들기
   <nav>
     <ul id="topMenu">
       <li><a href="#">     //내비게이션 영역
+(...생략...)
 ```
 
 ### 핵심 콘텐츠를 담는 태그
@@ -119,6 +120,18 @@ HTML 기본 문서 만들기
 </footer>
 (...생략...)
 ```
+
+### 여러 소스를 묶는 태그
+<p>HTML의 &lt;header&gt;, &lt;section&gt;같은 시맨틱 태그가 나오기 전까지는 헤더나 내비게이션, 푸터등을 구별할 때 &lt;div&gt;태그를 사용했다. &lt;div&gt;는 &lt;div id="header"&gt;sk &lt;div class="detail&gt;처럼 id나 class 속성을 사용해서 문서 구조를 만들거나 스타일을 적용할 때 사용한다. 즉 영역을 구별하거나 스타일로 문서를 꾸미는 것.</p>
+```html
+(...생략...)
+<header>
+  <div id="logo">
+    <a href="#">Dream Jeju</a>
+  </div>
+(...생략...)
+```
+
 
 
 
