@@ -54,6 +54,8 @@ HTML 기본 문서 만들기
 
 <p>html에선 자동완성 기능이 제공한다.</p>
 
+![image]({{ site.url }}{{ site.baseurl }}/assets/images/secondpost(1).jpg)
+
 ## 라이브 서버 설치하고 바로 결과 확인하기
 
 <p>비주얼 스튜디어 코드의 왼쪽 사이드 바에서 확장 아이콘을 클릭해 'Live Server'라고 검색하고 설치한다.(맥의 경우 cmd+K cmd+O를 차례대로 입력하면 즉시 실행된다.)</p>
