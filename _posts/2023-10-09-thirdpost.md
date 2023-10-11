@@ -37,7 +37,7 @@ sidebar:
 ```html
 <p><blockquote>-알프레드 스티글리츠: 나는 구름을 통해 내 삶의 철학을 기록하고 싶었다. 사진 속에는 현실이 있고 이것은 때때로 진짜 현실보다 더욱 현실적인 불가사의한 힘을 지니고 있다.</blockquote></p>
 ```
-![image](/assets/images/thirdpost(1).jpg)
+![image](/assets/images/thirdpost(2).jpg)
 
 ### 텍스트 굵게 &lt;strong&gt;, &lt;b&gt;
 
