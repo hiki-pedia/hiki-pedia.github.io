@@ -13,7 +13,7 @@ sidebar:
 ---
 <p>웹 문서에 다양한 내용 입력하기</p>
 
-## 각종 태그
+## 텍스트 입렵하기
 
 ### 제목 &lt;h<em>n</em>&gt;
 
@@ -84,3 +84,25 @@ sidebar:
 <ins>삽입할 내용</ins>
 <del>삭제할 내용</del>
 ```
+
+### 텍스트 여러게 삽입하기
+<p> &lt;div id="container"&gt;와 &lt;/div&gt;사이에 코드를 작성한다.</p>
+```html
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Canon AE-1</title>
+    <link rel="stylesheet" href="css/poster.css">     // 교제에서 미리 준비한 css
+  </head>
+  <body>
+    <div id="container">
+    <h1>Canon AE-1</h1>
+    <p>Canon AE-1은 필자가 처음 사용해본 필름 카메라로써 셔터우선 모드를 지원하는 최초의 A 시리즈 카메라, 렌즈의 조리개 값을 A에 두고 원하는 셔터 속도를 설정하면 조리개가 자동으로 조절되어 적정 노출을 얻을 수 있다.</p>
+    <p>이 카메라는 1976년에 출시 되었으며 필자가 사용한 카메라는 필자의 조부때 구매하여 친부에게 물려받았다.</p>
+    <h2>카메라 wishlist</h2>
+    </div>
+  </body>
+```
+
+![image](/assets/images/thirdpost(3).jpg)
