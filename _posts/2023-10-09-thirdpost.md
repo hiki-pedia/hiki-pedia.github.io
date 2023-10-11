@@ -105,4 +105,4 @@ sidebar:
   </body>
 ```
 
-![image](/assets/images/thirdpost(3).jpg)
+![image](/assets/images/thridpost(3).jpg)
