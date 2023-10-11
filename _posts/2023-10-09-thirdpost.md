@@ -58,7 +58,7 @@ sidebar:
  <p> 검이불루 화이불치: 검소하되 누추하지 않고 화려하되 사치스럽지 않다. - <cite>백제 온조왕</cite></p>
  ```
 
- ### 인식을 위한 소스코드 &lt;code&gt;
+### 인식을 위한 소스코드 &lt;code&gt;
  ```html
  <code>function savetheLocal( )</code>
  ```
