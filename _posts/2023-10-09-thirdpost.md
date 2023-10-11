@@ -105,7 +105,7 @@ sidebar:
   </body>
 ```
 
-![image](/assets/images/thridpost(3).jpg)
+![image](/assets/images/thirdpost(3).jpg)
 
 ## 목록 만들기
 
@@ -118,7 +118,7 @@ sidebar:
 </ol>
 ```
 
-![image](/assets/images/thridpost(4).jpg)
+![image](/assets/images/thirdpost(4).jpg)
 
 #### &lt;ol&gt;의 type, start 속성
 <p>순서 있는 목록은 기본적으로 숫자로 번호를 붙인다. 이때 type속성을 이용하면 영문자나 로마 숫자 등으로 나타낼 수 있다. type="1", type="a", type="A", type="i"&#40;로마 숫자 소문자&#41;, type="I"</p>&#40;로마 숫자 대문자&#41;</p>
