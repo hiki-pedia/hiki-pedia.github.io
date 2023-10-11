@@ -24,7 +24,7 @@ sidebar:
 <h2>레드향 샐러드 레시피</h2>
 <h3>상품 구성</h3>
 ```
-![image](/assets/images/thirdpost(1).jpg){: width="60%"", height="40%""}
+![image](/assets/images/thirdpost(1).jpg){: width="20%"", height="10%""}
 
 ### 텍스트 단락 &lt;p&gt;, 태그 줄을 바꿈 &lt;dr&gt;
 ```html
