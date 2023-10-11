@@ -106,3 +106,20 @@ sidebar:
 ```
 
 ![image](/assets/images/thridpost(3).jpg)
+
+## 목록 만들기
+
+### 순서 있는 목록 &lt;ol&gt;, &lt;li&gt;(자동으로 번호 부여)
+<p>목록을 표시할 내용 앞뒤에 각각 &lt;ol&gt;, &lt;/ol&gt; 태그를 두고 그 사이에 &lt;li&gt;, &lt;/li&gt;을 삽입한다.</p>
+```html
+<ol>
+  <li>항목1</li>
+  <li>항목2</li>
+</ol>
+```
+
+![image](/assets/images/thridpost(4).jpg)
+
+#### &lt;ol&gt;의 type, start 속성
+<p>순서 있는 목록은 기본적으로 숫자로 번호를 붙인다. 이때 type속성을 이용하면 영문자나 로마 숫자 등으로 나타낼 수 있다. type="1", type="a", type="A", type="i"&#40;로마 숫자 소문자&#41;, type="I"</p>&#40;로마 숫자 대문자&#41;</p>
+<p>순서 목록은 기본적으로 첫번째 숫자, 문자로 시작하지만 start속성을 사용하여 시작 번로를 바꿀 수 있다. &lt;ol type="a" start="3"&gt;라면 type ="a"의 세번째 즉 "c"부터 목록이 시작된다.</p>
