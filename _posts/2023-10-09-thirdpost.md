@@ -131,12 +131,27 @@ sidebar:
 
 ### 설명 목록 &lt;dl&gt;, &lt;de&gt;, &lt;dd&gt;
 <p>설명 목록이란 이름과 값 형태로 된 목록을 말한다. 사전에서 단어명과 설명이 있는 모습을 떠올리면 된다.</p>
-<p>이름&#40;단어명&#41;부분을 지정하는 &lt;dt&gt;태그와 값&#04;설명&#41;부분을 지정하는 &lt;dd&gt;로 구성</p>
+<p>이름&#40;단어명&#41;부분을 지정하는 &lt;dt&gt;태그와 값&#40;설명&#41;부분을 지정하는 &lt;dd&gt;로 구성</p>
 ```html
 <dl>
   <dt>이름</dt>
   <dd>값</dd>
 </dl>
 ```
+```html
+<dl>
+  <dt>DSLR</dt>
+  <dd>Canon EOS R50</dd>
+  <dd>Sony A7</dd>
+  <dt>Film</dt>
+  <dd>Contax T3</dd>
+  <dd>Canon AE-1</dd>
+</dl>
+```
 
 ![image](/assets/images/thirdpost(5).jpg)
+
+## 표 만들기
+
+### 표 구성요소
+<p>세로 줄이 <b>열</b>, 가로 줄이 <b>행</b>
