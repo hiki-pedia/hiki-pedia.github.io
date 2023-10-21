@@ -24,6 +24,7 @@ sidebar:
 <h2>레드향 샐러드 레시피</h2>
 <h3>상품 구성</h3>
 ```
+
 ![image](/assets/images/thirdpost(1).jpg){: width="20%"", height="10%""}
 
 ### 텍스트 단락 &lt;p&gt;, 태그 줄을 바꿈 &lt;dr&gt;
@@ -157,6 +158,7 @@ sidebar:
 <p>세로 줄이 <b>열</b>, 가로 줄이 <b>행</b>
 
 ![image](/assets/images/thirdpost(6).jpg){: width="20%"", height="10%""}
+
 
 ### 표 만들기 &lt;table&gt;, &lt;capton&gt; 태그<br> 셀을 만드는 &lt;td&gt; &lt;th&gt;<br> 표의 제목 행에 셀을 만들때 &lt;th&gt;
 
