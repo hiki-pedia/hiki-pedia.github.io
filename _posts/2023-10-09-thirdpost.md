@@ -157,7 +157,7 @@ sidebar:
 ### 표 구성요소
 <p>세로 줄이 <b>열</b>, 가로 줄이 <b>행</b></p>
 
-![image](/assets/images/thirdpost(6).jpg){: width="30%"", height="15%""}
+![image](/assets/images/thirdpost(6).jpg){: width="40%""}
 
 
 ### 표 만들기 &lt;table&gt;, &lt;capton&gt; 태그<br> 셀을 만드는 &lt;td&gt; &lt;th&gt;<br> 표의 제목 행에 셀을 만들때 &lt;th&gt;
@@ -189,4 +189,4 @@ sidebar:
              // 아래 그림은 따로 설정해준 것이다.
 ```
 
-![image](/assets/images/thirdpost(7).jpg){: width="40%"", height="20%""}
+![image](/assets/images/thirdpost(7).jpg){: width="50%"", height="25%""}
