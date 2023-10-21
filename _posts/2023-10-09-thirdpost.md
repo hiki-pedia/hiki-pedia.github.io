@@ -155,7 +155,7 @@ sidebar:
 ## 표 만들기
 
 ### 표 구성요소
-<p>세로 줄이 <b>열</b>, 가로 줄이 <b>행</b>
+<p>세로 줄이 <b>열</b>, 가로 줄이 <b>행</b></p>
 
 ![image](/assets/images/thirdpost(6).jpg){: width="20%"", height="10%""}
 
