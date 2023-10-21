@@ -129,7 +129,7 @@ sidebar:
 <p>목록을 표시할 내용 앞뒤에 각각 &lt;ul&gt;, &lt;/ul&gt; 태그를 두고 그 사이에 &lt;li&gt;, &lt;/li&gt;을 삽입한다.</p>
 <p>항목 앞에 작은 원이나 사각형을 붙여서 구분하는데 이 것을 불릿<sup>bullet</sup>이라고 한다.</p>
 
-### 설명 목록 &lt;dl&gt;, &lt;de&gt;, &lt;dd&gt;
+### 설명 목록 &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;
 <p>설명 목록이란 이름과 값 형태로 된 목록을 말한다. 사전에서 단어명과 설명이 있는 모습을 떠올리면 된다.</p>
 <p>이름&#40;단어명&#41;부분을 지정하는 &lt;dt&gt;태그와 값&#40;설명&#41;부분을 지정하는 &lt;dd&gt;로 구성</p>
 ```html
@@ -186,4 +186,5 @@ sidebar:
 </table>     // 이렇게 하면 표에 선이 나타나지 않는다 따로 css style설정을 해줘야한다.
              // 아래 그림은 따로 설정해준 것이다.
 ```
+
 ![image](/assets/images/thirdpost(7).jpg){: width="20%"", height="10%""}
