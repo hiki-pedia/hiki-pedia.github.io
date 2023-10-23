@@ -160,7 +160,7 @@ sidebar:
 ![image](/assets/images/thirdpost(6).jpg){: width="40%""}
 
 
-### 표 만들기 &lt;table&gt;, &lt;capton&gt; 태그<br> 셀을 만드는 &lt;td&gt; &lt;th&gt;<br> 표의 제목 행에 셀을 만들때 &lt;th&gt;
+### 표 만들기 &lt;table&gt;, &lt;capton&gt; 태그<br> 셀을 만드는 &lt;tr&gt; &lt;td&gt;<br> 표의 제목 행에 셀을 만들때 &lt;th&gt;
 
 <p>&lt;table&gt;안에 &lt;caption&gt;태그를 넣어서 표의 제목을 만든다.<br>&lt;tr&gt;은 행&#40;가로&#41; &lt;td&gt;는 열&#40;세로&#41;를 만든다. 이때 &lt;th&gt;태그는 진하게 표시되고 셀 중앙에 배열된다. 아래 코드로 만든 결과를 확인해 보자.</p>
 
