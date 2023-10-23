@@ -190,3 +190,32 @@ sidebar:
 ```
 
 ![image](/assets/images/thirdpost(7).jpg){: width="50%"", height="25%""}
+
+### 표의 구조를 구성하는 &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;
+
+<p>&lt;thead&gt;는 표의 제목을 뜻하고  &lt;tbody&gt;는 표의 본문, &lt;tfoot&gt;는 표의 요악을 뜻한다. 표의 구조를 지정하면 시작장애인도 화면낭독기를 통해 표를 쉽게 이해할 수 있다. css를 이용해 각각 다른 스타일을 지정할 수 있다. 표의 본문이 길어 한 화면을 넘어갈 경우, 자바스크립트를 통해 thead와 tfoot는 표의 위 아래에 고정하고 tbody만 스크롤하도록 만들 수 있다. 내용이 긴 표를 여러 장 인쇄할 때도 각 장마다 표의 제목과 요약부분이 자동 안쇄되므로 편리하다.</p>
+
+### 행이나 열을 합치는 &lt;rowspan&gt;, &lt;colspan&gt;
+
+<p><b>행</b>을 합치려면 <b>rowspan</b>속성을 이용하고 <b>열</b>을 합치려면 <b>colspan</b>을 이용하면 된다.</p>
+
+```html
+<td rowspan="합칠 셀의 개수">셀의 내용</td>
+<td colspan="합칠 셀의 개수">셀의 내용</td>
+```
+```html
+//rowspan속성 이용해서 셀 합치기
+<tr>
+  <td rowspan="2">선물용</td>
+  <td>3kg</td>
+  <td>11~16과</td>
+  <td>35,000원</td>
+</tr>
+<tr>
+  <td>5kg</td>
+  <td>18~16과</td>
+  <td>52,000원</td>
+</tr>
+```
+
+![image](/assets/images/thirdpost(8).jpg){: width="50%""}
