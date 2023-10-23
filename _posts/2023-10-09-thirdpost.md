@@ -219,3 +219,40 @@ sidebar:
 ```
 
 ![image](/assets/images/thirdpost(8).jpg){: width="50%""}
+
+### 열을 묶어 주는 &lt;col&gt;, &lt;colgroup&gt;
+
+<p>단순히 표를 만들기만 하는 것이 아니라 특정 열에 배경색을 넣거나 너비를 바꾸려면 원하는 열을 선택할 수 있어야 한다. &lt;col&gt;는 열을 1개만 지정하고 &lt;colgroup&gt;는 &lt;col&gt;태그를 2개 이상 묶어서 사용한다.</p>
+
+```html
+<colgroup>
+  <col>
+</colgroup>
+```
+<p>&lt;colgroup&gt;, &lt;col&gt;태그는 반드시 &lt;caption&gt;태그 다음에 써야한다. 즉 표의 내용이 시작되기 전에 열의 상태를 알려주는 것. &lt;col&gt;태그를 사용할 때에는 &lt;colgroup&gt;태그 안에 &lt;col&gt;태그를 포함해 표 전체 열의 개수만큼 &lt;col&gt;태그를 넣어야 한다. 이 말을 해석하자면 아래 코드를 보면 첫 번째 열에만 배경색을 지정하고 세번째 열과 네번째 열의 너비를 150px로 지정한 코드이다. 이때 스타일 속성이 없는 두번째 열에도 단순히 &lt;col&gt;태그를 명시해야 한다.</p>
+
+```html
+<table>
+  <caption>선물용과 가정용 상품 구성</caption>
+  <colgroup>
+    <col style="blackground-color:#eee;">     // 첫번째 열의 배경색 저정
+    <col>                                     // 스타일이 없어도 &lt;col&gt;를 명시
+    <col style="width:150px;">                // 세번째 열의 스타일 지정
+    <col style="width:150px;">                // 네번째 열의 스타일 지정
+  </colgroup>
+</table>
+```
+
+<p>이때 같은 스타일 속성을 사용하는 &lt;col&gt;태그가 있다면 span 속성을 사용해서 묶어 줄 수 있다. </p>
+
+```html
+<table>
+  <caption>선물용과 가정용 상품 구성</caption>
+  <colgroup>
+    <col style="blackground-color:#eee;">     
+    <col>                                    
+    <col span="2" style="width:150px;">     // 스타일 속성이 같은 세번째 네번째 열을 묶어서 너비 지정    
+  </colgroup>
+</table>
+```
+
