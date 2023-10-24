@@ -48,3 +48,27 @@ sidebar:
 <embed src="경로" width="너비" height="높이">
 ```
 
+### 오디오와 비디오 파일 삽입 &lt;audio&gt;, &ltvideo&gt;
+
+<p>HTML5 이전 HTML4까지는 별도의 플러그인 프로그램이 필요했지만 이제는 웹 브라우저 안에서 멀티미디어 파일을 삽입하고 바로 재생할 수 있다. 따라서 같은 웹 브라우저라 하더라도 버전에 따라 지원 상황이 달라질 수 있다. 이때 <b>controls</b>는 클라이언트가 음악을 재생하거나 멈출 수 있도록 컨트롤 바를 나타내는 속성이다. 재생버튼을 눌러야만 재생한다.</p>
+
+```html
+<audio src="오디오 파일 경로" controls></audio>
+<video src="비디오 파일 경로" controls></video>
+```
+#### audio와 video의 속성 종류
+<dl>
+  <dt>controls</dt>
+  <dd>플레이어 화면에 컨트롤 바를 표시한다.</dd>
+  <dt>autoplay</dt>
+  <dd>오디오나 비디오를 자동으로 실행</dd>
+  <dt>loop</dt>
+  <dd>오디오나 비디오를 반복 재생</dd>
+  <dt>muted</dt>
+  <dd>오디오나 비디오의 소리를 제거</dd>
+  <dt>preload</dt>
+  <dd>페이지를 불러올 때 파일을 어떻게 로딩할 것인지 결정. 사용할 수 있는 값은 auto, metadata, none이다. 기본값은 preload="auto"이다.</dd>
+  <dt>width, height</dt>
+  <dd>너비와 높이를 결정. 하나만 지정할 경우 나머지는 자동 결정</dd>
+  <dt>poster="파일 이름"</dt>
+  <dd>&lt;video&gt;태그에서 사용하는 속성으로 비디오가 재생되기 전까지 화면에 표시될 포스터 이미지를 지정한다.</dd>
