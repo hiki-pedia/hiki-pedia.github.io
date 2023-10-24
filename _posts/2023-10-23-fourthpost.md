@@ -57,19 +57,21 @@ sidebar:
 <video src="비디오 파일 경로" controls></video>
 ```
 #### audio와 video의 속성 종류
-<dl>
-  <dt>controls</dt>
-  <dd>플레이어 화면에 컨트롤 바를 표시한다.</dd>
-  <dt>autoplay</dt>
-  <dd>오디오나 비디오를 자동으로 실행</dd>
-  <dt>loop</dt>
-  <dd>오디오나 비디오를 반복 재생</dd>
-  <dt>muted</dt>
-  <dd>오디오나 비디오의 소리를 제거</dd>
-  <dt>preload</dt>
-  <dd>페이지를 불러올 때 파일을 어떻게 로딩할 것인지 결정. 사용할 수 있는 값은 auto, metadata, none이다. 기본값은 preload="auto"이다.</dd>
-  <dt>width, height</dt>
-  <dd>너비와 높이를 결정. 하나만 지정할 경우 나머지는 자동 결정</dd>
-  <dt>poster="파일 이름"</dt>
-  <dd>&lt;video&gt;태그에서 사용하는 속성으로 비디오가 재생되기 전까지 화면에 표시될 포스터 이미지를 지정한다.</dd>
-</dl>
+<blockquote>
+  <dl>
+    <dt>controls</dt>
+    <dd>플레이어 화면에 컨트롤 바를 표시한다.</dd>
+    <dt>autoplay</dt>
+    <dd>오디오나 비디오를 자동으로 실행</dd>
+    <dt>loop</dt>
+    <dd>오디오나 비디오를 반복 재생</dd>
+    <dt>muted</dt>
+    <dd>오디오나 비디오의 소리를 제거</dd>
+    <dt>preload</dt>
+    <dd>페이지를 불러올 때 파일을 어떻게 로딩할 것인지 결정. 사용할 수 있는 값은 auto, metadata, none이다. 기본값은 preload="auto"이다.</dd>
+    <dt>width, height</dt>
+    <dd>너비와 높이를 결정. 하나만 지정할 경우 나머지는 자동 결정</dd>
+    <dt>poster="파일 이름"</dt>
+    <dd>&lt;video&gt;태그에서 사용하는 속성으로 비디오가 재생되기 전까지 화면에 표시될 포스터 이미지를 지정한다.</dd>
+  </dl>
+</blockquote>
