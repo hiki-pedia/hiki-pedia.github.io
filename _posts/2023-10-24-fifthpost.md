@@ -111,3 +111,15 @@ sidebar:
 ### &lt;input&gt; type 속성 한눈에 살펴보기
 
 ![image](/assets/images/fifthpost(2).jpg)
+
+### 텍스트와 비밀번호를 나타내는 type="text"와 type="password"
+
+<p>텍스트 필드는 폼에서 가장 많이 사용하는 요소. 주로 아이디나 이름, 주소 등 한 줄짜리 일반 텍스트를 입력할 때 사용. 비밀번호 필드는 입력하는 내용을 보여주지 않아야 하므로 * 등으로 표시 된다.</p>
+
+```html
+<input type="text">
+<input type="password">
+```
+<p>텍스트 필드와 비밀번호 필드에서 사용하는 속성</p>
+
+![image](/assets/images/fifthpost(3).jpg)
