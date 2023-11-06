@@ -106,4 +106,8 @@ sidebar:
 
 ### &lt;input&gt;
 
-<p></p>
+<p>다양한 폼에서 사용자가 입력한 정도를 받을 때 사용.</p>
+
+### &lt;input&gt; type 속성 한눈에 살펴보기
+
+![image](/assets/images/fifthpost(2).jpg)
