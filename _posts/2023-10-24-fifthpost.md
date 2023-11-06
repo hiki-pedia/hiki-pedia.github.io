@@ -100,5 +100,10 @@ sidebar:
 // 이 방법은 앞선 방법보다 복잡해 보이지만 레이블과 사용자 정보를 입력받는 <input>태그가 떨어져 있더라도 둘 사이를 쉽게 연결할 수 있다.
 ```
 
-!![image](/assets/images/fifthpost(1).jpg)
+![image](/assets/images/fifthpost(1).jpg)
 
+## 사용자 입력을 위한 input태그
+
+### &lt;input&gt;
+
+<p></p>
