@@ -123,3 +123,14 @@ sidebar:
 <p>텍스트 필드와 비밀번호 필드에서 사용하는 속성</p>
 
 ![image](/assets/images/fifthpost(3).jpg)
+
+```html
+<form>
+  <fieldset>
+    <label>아이디:<input type="text" id="user-id" size="10"></label>
+    <label>비빌번호:<input type="password" id="user-wd" size="10"></label>
+    <input type="sumit" value="로그인">
+  </fieldset>
+</form>
+```
+
