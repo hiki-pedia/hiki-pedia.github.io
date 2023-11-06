@@ -97,8 +97,8 @@ sidebar:
 <label for="id명">레이블명<input id="id명"></label>     //&lt;label&gt;태그와 폼 요소를 따로 쓰고 연결하기
 <label for="user-id">아이디(6자이상)</label>
 <input type="text" id="user-id">
-// 이 방법은 앞선 방법보다 복잡해 보이지만 레이블과 사용자 정보를 입력받는 &lt;input&gt;태그가 떨어져 있더라도 둘 사이를 쉽게 연결할 수 있다.
+// 이 방법은 앞선 방법보다 복잡해 보이지만 레이블과 사용자 정보를 입력받는 <input>태그가 떨어져 있더라도 둘 사이를 쉽게 연결할 수 있다.
 ```
 
-!![image](/assets/images/fifthpost(1).jpg){: width="20%"", height="10%""}
+!![image](/assets/images/fifthpost(1).jpg)
 
