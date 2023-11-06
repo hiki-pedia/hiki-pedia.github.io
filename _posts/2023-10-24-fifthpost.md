@@ -40,3 +40,65 @@ sidebar:
     </dl>
   </blockquote>
 </p>
+
+<p>폼에 내용을 입력하고 서버로 전송했을 때 서버에 있는 register.php를 실행한다면</p>
+
+```html
+<form action="register.php">
+  /* 여러가지 폼 요소 */
+</form>
+```
+
+<p>자동완성 기능은 예전에 입력했던 내용을 자동으로 표시해주는 것이고 autocomplete속성이다. 기본적으로 on상태이고 off하고 싶으면 따로 지정해 주어야한다.</p>
+
+```html
+<form aciton="" autocomplete="off">
+  /* 여러 폼 요소 */
+</form>
+```
+
+### 폼 요소를 그룹으로 묶는 &lt;fieldset&gt; &lt;legend&gt;
+
+<p>하나의 폼 안에서 여러 구역을 나누어 표시할 때 &lt;fieldset&gt; 태그를 사용한다. 예를들어 쇼핑물 사이트에서 주문서를 작성할 때 개인정보와 배송정보를 나누어 표시하면 사용자가 입력하기도 편하고 화면도 깔끔하게 정리할 수 있다.</p>
+
+```html
+<fieldset [속성="속성값"]></fieldset>
+```
+
+<p>&lt;legend&gt;태그는 다음과 같이 fieldset에 묶은 그룹에 제목을 붙일 수 있다.</p>
+
+```html
+<fieldset>
+  <legend>그룹이름</legend>
+</fieldset>
+```
+
+```html
+<h1>자동차 구매하기</h1>
+<form action="">
+  <fieldset>
+    <legend>상품입력</legend>
+
+  </fieldset>
+  <fieldset>
+    <legend>배송지입력</legend>
+  </fieldset>
+</form>
+```
+
+### 폼 요소에 레이블을 붙이는 &lt;label&gt;
+
+<p>&lt;input&gt;태그와 같은 폼 요소에 레이블을 붙일 때 사용한다. <b>레이블</b>이란 입력란 가까이에 아이디나 비밀번호처럼 붙여놓은 텍스트를 말한다.</p>
+
+```html
+<label>레이블명<input type="text"></label>     // &lt;label&gt;, 안에 &lt;input&gt; 넣기
+<label>아이디(6자이상)<input type="text"></label>
+
+<label for="id명">레이블명<input id="id명"></label>     //&lt;label&gt;태그와 폼 요소를 따로 쓰고 연결하기
+<label for="user-id">아이디(6자이상)</label>
+<input type="text" id="user-id">
+// 이 방법은 앞선 방법보다 복잡해 보이지만 레이블과 사용자 정보를 입력받는 &lt;input&gt;태그가 떨어져 있더라도 둘 사이를 쉽게 연결할 수 있다.
+```
+
+!![image](/assets/images/fifthpost(1).jpg){: width="20%"", height="10%""}
+
