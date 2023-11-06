@@ -122,7 +122,7 @@ sidebar:
 ```
 <p>텍스트 필드와 비밀번호 필드에서 사용하는 속성</p>
 
-![image](/assets/images/fifthpost(3).jpg)
+![image](/assets/images/fifthpost(3).jpg){: width="20%"", height="10%""}
 
 ```html
 <form>
