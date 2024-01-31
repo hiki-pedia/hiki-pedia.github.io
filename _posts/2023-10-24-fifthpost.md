@@ -146,3 +146,4 @@ sidebar:
 </form>
 ```
 
+### 다양한 용도에 맞게 입력하는 type="search", type="url", type="email"
