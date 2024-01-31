@@ -170,4 +170,9 @@ sidebar:
   </li>
 </ul>
 ```
+
 ![image](/assets/images/fifthpost(3).jpg)
+
+### 체크박스와 라디오 버튼을 나타내는 type="checkbox", type="radio"
+
+<p>체크박스와 라디오 버튼은 여러개의 항목에서 선택할 때 사용한다. 이때 <b>checkbox는 중복 선택 가능</b>이고 <b>radio는 1개만 선택</b>이다.</p>
