@@ -176,3 +176,22 @@ sidebar:
 ### 체크박스와 라디오 버튼을 나타내는 type="checkbox", type="radio"
 
 체크박스와 라디오 버튼은 여러개의 항목에서 선택할 때 사용한다. 이때 <b>checkbox는 중복 선택 가능</b>이고 <b>radio는 1개만 선택</b>이다.
+
+  * value: 선택한 체크박스나 라디오 버튼을 서버에게 알려줄 때 넘겨줄 값을 지정한다. 이 값은 영문이거나 숫자이며 필수 속성
+  * checked: 체크박스나 라디오 버튼의 항목은 처음에 아무것도 선택되지 않은 상태로 화면에 표시되는데, 여러 항목 중에서 기본으로 선택해 놓고 싶은 항목에 사용한다. 속성값은 따로 없다.
+
+```html
+<fieldset>
+  <legend>상품 선택</legend>
+  <p><b>주문할 상품을 선택해 주세요.</b></p>
+  <label><input type="checkbox" value="s_3">소니 A7M4</label>
+  <label><input type="checkbox" value="s_5">소니 A7C2</label>
+  <label><input type="checkbox" value="f_5">소니 A7M4</label>
+  <p><b>추가선택</b></p>
+  <label><input type="radio" name="gift" value="yes">24~79mm렌즈 선택 함</label>
+  <label><input type="radio" name="gift" value="no">24~79mm렌즈 선택 안함</label>
+</fieldset>
+//위의 radio 버튼에서 name 속성은 php와 같은 웹 프로그래밍에서 폼 요소를 제어할 때 자주 사용. 라디오 버튼에서 하나의 버튼만 선택할 수 있게 하려면 모든 라디오 버튼의 name값을 똑같이 지정해야함.
+//즉 radio 뒤에 붇는 name 속성이 같은 버튼 중에 하나만 선택할 수 있는 것.
+```
+
