@@ -220,5 +220,6 @@ sidebar:
     <label><input type="checkbox" value="s_5">소니 A7C2</label>
     <input type="number" min="0" max="3">개 (쵀대 3개)<!-- 최소 0개에서 최대 3개로 지정해줌 -->
   </li>
-<ul>
+<ul><!-- 같은 방법으로 "checkbox"위치에 "range"로 바꾸머면 슬라이드 막대가 나오게 된다. -->
 ```
+
