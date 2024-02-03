@@ -195,3 +195,24 @@ sidebar:
 //즉 radio 뒤에 붇는 name 속성이 같은 버튼 중에 하나만 선택할 수 있는 것.
 ```
 
+### 숫자 입력 필드를 나타내는 type="number", type="range"
+
+텍스트 필드에서 사용자가 숫자를 직접 입력할 수도 있지만 type="number"을 사용하면 스핀박스가 나타나면서 숫자을 선택할 수 있다. type="range"는 슬라이드 막대를 움직여 숫자를 입력할 수 있다.
+
+```html
+<input type="number">
+<input type="range">
+```
+
+사용할 수 있는 속성은
+  * min: 필드에 입력할 수 있는 최솟값을 지정한다. 기본 최솟값은 0이다. 
+  * max: 필드에 입력할 수 있는 최댓값을 지정한다. 기본 최댓값은 100이다.
+  * step: 숫자 간격을 지정할 수 있다. 기본값은 1이다.
+  * value: 필드에 표시할 초깃값이다.
+
+```html
+<ul>
+  <li>
+    <label><input type="checkbox" value="s_3">소니 A7M4</label>
+    <input type="number" min="0" max="5">개 (쵀대 5개)<!-- 최소 0개에서 최대 5개로 지정해줌 -->
+```
