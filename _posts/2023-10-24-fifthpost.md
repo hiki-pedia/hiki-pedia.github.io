@@ -49,7 +49,7 @@ sidebar:
 </form>
 ```
 
-<p>자동완성 기능은 예전에 입력했던 내용을 자동으로 표시해주는 것이고 autocomplete속성이다. 기본적으로 on상태이고 off하고 싶으면 따로 지정해 주어야한다.</p>
+자동완성 기능은 예전에 입력했던 내용을 자동으로 표시해주는 것이고 autocomplete속성이다. 기본적으로 on상태이고 off하고 싶으면 따로 지정해 주어야한다.
 
 ```html
 <form aciton="" autocomplete="off">
@@ -65,7 +65,7 @@ sidebar:
 <fieldset [속성="속성값"]></fieldset>
 ```
 
-<p>&lt;legend&gt;태그는 다음과 같이 fieldset에 묶은 그룹에 제목을 붙일 수 있다.</p>
+&lt;legend&gt;태그는 다음과 같이 fieldset에 묶은 그룹에 제목을 붙일 수 있다.
 
 ```html
 <fieldset>
@@ -97,7 +97,7 @@ sidebar:
 <label for="id명">레이블명<input id="id명"></label>     //&lt;label&gt;태그와 폼 요소를 따로 쓰고 연결하기
 <label for="user-id">아이디(6자이상)</label>
 <input type="text" id="user-id">
-// 이 방법은 앞선 방법보다 복잡해 보이지만 레이블과 사용자 정보를 입력받는 <input>태그가 떨어져 있더라도 둘 사이를 쉽게 연결할 수 있다.
+<!-- 이 방법은 앞선 방법보다 복잡해 보이지만 레이블과 사용자 정보를 입력받는 <input>태그가 떨어져 있더라도 둘 사이를 쉽게 연결할 수 있다. -->
 ```
 
 ![image](/assets/images/fifthpost(1).jpg)
@@ -106,7 +106,7 @@ sidebar:
 
 ### &lt;input&gt;
 
-<p>다양한 폼에서 사용자가 입력한 정도를 받을 때 사용.</p>
+다양한 폼에서 사용자가 입력한 정도를 받을 때 사용.
 
 ### &lt;input&gt; type 속성 한눈에 살펴보기
 
@@ -114,7 +114,7 @@ sidebar:
 
 ### 텍스트와 비밀번호를 나타내는 type="text"와 type="password"
 
-<p>텍스트 필드는 폼에서 가장 많이 사용하는 요소. 주로 아이디나 이름, 주소 등 한 줄짜리 일반 텍스트를 입력할 때 사용. 비밀번호 필드는 입력하는 내용을 보여주지 않아야 하므로 * 등으로 표시 된다.</p>
+텍스트 필드는 폼에서 가장 많이 사용하는 요소. 주로 아이디나 이름, 주소 등 한 줄짜리 일반 텍스트를 입력할 때 사용. 비밀번호 필드는 입력하는 내용을 보여주지 않아야 하므로 * 등으로 표시 된다.
 
 ```html
 <input type="text">
@@ -186,13 +186,13 @@ sidebar:
   <p><b>주문할 상품을 선택해 주세요.</b></p>
   <label><input type="checkbox" value="s_3">소니 A7M4</label>
   <label><input type="checkbox" value="s_5">소니 A7C2</label>
-  <label><input type="checkbox" value="f_5">소니 A7M4</label>
+  <label><input type="checkbox" value="f_5">소니 A9C3</label>
   <p><b>추가선택</b></p>
   <label><input type="radio" name="gift" value="yes">24~79mm렌즈 선택 함</label>
   <label><input type="radio" name="gift" value="no">24~79mm렌즈 선택 안함</label>
 </fieldset>
-//위의 radio 버튼에서 name 속성은 php와 같은 웹 프로그래밍에서 폼 요소를 제어할 때 자주 사용. 라디오 버튼에서 하나의 버튼만 선택할 수 있게 하려면 모든 라디오 버튼의 name값을 똑같이 지정해야함.
-//즉 radio 뒤에 붇는 name 속성이 같은 버튼 중에 하나만 선택할 수 있는 것.
+<!-- 위의 radio 버튼에서 name 속성은 php와 같은 웹 프로그래밍에서 폼 요소를 제어할 때 자주 사용. 라디오 버튼에서 하나의 버튼만 선택할 수 있게 하려면 모든 라디오 버튼의 name값을 똑같이 지정해야함. -->
+<!-- 즉 radio 뒤에 붇는 name 속성이 같은 버튼 중에 하나만 선택할 수 있는 것. -->
 ```
 
 ### 숫자 입력 필드를 나타내는 type="number", type="range"
@@ -215,4 +215,8 @@ sidebar:
   <li>
     <label><input type="checkbox" value="s_3">소니 A7M4</label>
     <input type="number" min="0" max="5">개 (쵀대 5개)<!-- 최소 0개에서 최대 5개로 지정해줌 -->
+  </li>
+  <li>
+    <label><input type="checkbox" value="s_5">소니 A7C2</label>
+    <input type="number" min="0" max="3">개 (쵀대 3개)<!-- 최소 0개에서 최대 3개로 지정해줌 -->
 ```
