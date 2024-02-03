@@ -219,4 +219,6 @@ sidebar:
   <li>
     <label><input type="checkbox" value="s_5">소니 A7C2</label>
     <input type="number" min="0" max="3">개 (쵀대 3개)<!-- 최소 0개에서 최대 3개로 지정해줌 -->
+  </li>
+<ul>
 ```
