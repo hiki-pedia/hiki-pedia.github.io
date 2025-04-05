@@ -1,0 +1,120 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15" version="26.2.5">
+  <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
+    <mxGraphModel dx="1115" dy="673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="U0234lUq_5A5ovXBIxbo-67" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="50" width="940" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-68" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;RAG sLLM Architecture&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="50" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-96" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-69" target="U0234lUq_5A5ovXBIxbo-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-69" value="Database&lt;div&gt;(MySQL)&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="36.75" y="310" width="70.5" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-70" value="Data Paser" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="119.5" y="310" width="70.5" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-73" value="Embedding" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="332.5" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-78" target="U0234lUq_5A5ovXBIxbo-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-78" value="VectorDB&lt;div&gt;(FAISS)&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="350" y="220" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-98" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-87" target="U0234lUq_5A5ovXBIxbo-88">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-87" value="query/&lt;div&gt;Personal Data&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="36.75" y="160" width="99" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-88" target="U0234lUq_5A5ovXBIxbo-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-88" value="Embedding" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="172" y="157.5" width="89" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-91" target="U0234lUq_5A5ovXBIxbo-94">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="655" y="265" />
+              <mxPoint x="655" y="95" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-91" value="Query&lt;div&gt;+&lt;div&gt;retrieved Data&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+&lt;/div&gt;&lt;div&gt;Personal Data&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="216.25" width="100" height="97.5" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-94" target="U0234lUq_5A5ovXBIxbo-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-94" value="Final Prompt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="675" y="80" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=60;entryPerimeter=0;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-73" target="U0234lUq_5A5ovXBIxbo-78">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-100" target="U0234lUq_5A5ovXBIxbo-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-100" value="&lt;div&gt;Farm fine-tuned&lt;/div&gt;SLLM" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="210" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="U0234lUq_5A5ovXBIxbo-117">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="408.4999999999999" as="sourcePoint" />
+            <mxPoint x="865" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-103" value="Response" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="377.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-105" value="ex) 3월 수수는??.. 이 사용자는 3월 생육활동으로 무엇무엇을 했다...&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="26.25" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-106" value="&lt;div&gt;Vector 임베딩 모델을 이용문장 임베딩&lt;/div&gt;[127,9,0,8,6,3,2,1]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="171" y="130" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-107" value="다양한 데이터를 문장 데이터로 파싱&lt;div&gt;ex) 3월 수수의 생육활동은 ... 이다..&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="92.63" y="278" width="120.25" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-108" value="&lt;div&gt;Vector 임베딩 모델을 이용데이터 임베딩&lt;/div&gt;[127,9,0,8,6,3,2,1]" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="209" y="308" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-109" value="만들어진 임베딩 정보를 Vector DB에 적재" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="324" y="328" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-110" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Query와 개인데이터를&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;기반으로&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;VectorDB 유사도 &amp;nbsp;검색&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="320" y="140" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-111" target="U0234lUq_5A5ovXBIxbo-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-111" value="Data Retriever" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="250" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-116" value="리소스 절약을 위해 QLoRA 적용" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="775" y="210" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="U0234lUq_5A5ovXBIxbo-117" target="U0234lUq_5A5ovXBIxbo-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-117" value="Fine-tuning&amp;nbsp;&lt;div&gt;data store&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="775" y="328" width="110" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-120" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;질문과 대답을 이용해 추가 파인튜닝 데이터 생성&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="832" y="377.5" width="103" height="32.5" as="geometry" />
+        </mxCell>
+        <mxCell id="U0234lUq_5A5ovXBIxbo-121" value="&lt;span style=&quot;font-size: 9px;&quot;&gt;일정 데이터 적재시&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 9px;&quot;&gt;재파인튜닝으로 성능 향상&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="837" y="292.5" width="93" height="27.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
