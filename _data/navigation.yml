@@ -2,6 +2,10 @@
 main:
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
+   - title: "프론트"
+     url: /frontend/
+   - title: "백"
+     url: /backend/
    - title: "Category"
      url: "category"
    - title: "Tag"
@@ -12,6 +16,10 @@ main:
 docs:
   - title: "CONTENTS"
     children: 
+      - title: "프론트"
+        url: /frontend/
+      - title: "백"
+        url: /backend/
       - title: "Category"
         url: "category"
       - title: "Tag"
