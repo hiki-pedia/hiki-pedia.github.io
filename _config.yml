@@ -63,6 +63,8 @@ atom_feed:
 search                   : true # true, false (default)
 search_full_content      : true # true, false (default)
 search_provider          : lunr
+after_footer_scripts:
+  - /assets/js/custom.js
 lunr:
   search_within_pages    : true
 algolia:
@@ -228,7 +230,6 @@ timezone: Asia/Seoul
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
 
@@ -236,7 +237,6 @@ plugins:
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
 
@@ -286,13 +286,17 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
+      toc: true
+      toc_sticky: true
+      sidebar:
+        nav: "docs"
       read_time: true
       comments: true
       share: true
       related: true
       future: true
-      show_date : true
+      show_date: true
   #_pages
   - scope:
       path: ""
@@ -300,3 +304,4 @@ defaults:
     values:
       layout: single
       author_profile: true
+      toc_sticky: true

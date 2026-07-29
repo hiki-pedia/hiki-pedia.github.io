@@ -1,19 +1,23 @@
 # main links
 main:
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-   - title: "프론트"
-     url: /frontend/
-   - title: "백"
-     url: /backend/
-   - title: "Search"
-     url: /search/
+  - title: "frontend"
+    url: /frontend/
+  - title: "backend"
+    url: /backend/
+  - title: "projects"
+    url: /projects/
+  - title: "mypage"
+    url: /mypage/
+    icon: "fas fa-user"
+    icon_only: true
+    description: "mypage"
 
 docs:
   - title: "CONTENTS"
     children: 
-      - title: "프론트"
+      - title: "frontend"
         url: /frontend/
-      - title: "백"
+      - title: "backend"
         url: /backend/
-
+      - title: "projects"
+        url: /projects/

@@ -6,10 +6,6 @@ tags:
   - html
   - css
   - js
-toc : true
-author_profile : false
-sidebar:
-  nav: "docs"
 ---
 
 ## Why engineering?
@@ -38,7 +34,6 @@ sidebar:
 ## End of the writing
 
 앞으로 저의 목표를 위해 열심히 나아갈 것 입니다. 포기하지 않기를 저 자신에게 바랍니다.
-
 
 
 

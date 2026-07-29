@@ -1,0 +1,107 @@
+---
+title: "mypage"
+layout: single
+permalink: /mypage/
+author_profile: true
+sidebar:
+  nav: "docs"
+---
+
+<section class="profile-section">
+  <h2>기본 정보</h2>
+  <dl class="profile-facts">
+    <div>
+      <dt>이름</dt>
+      <dd>우희석</dd>
+    </div>
+    <div>
+      <dt>생년월일</dt>
+      <dd>2001.11.14</dd>
+    </div>
+    <div>
+      <dt>거주지</dt>
+      <dd>
+        대한민국 서울특별시 서대문구<br>
+        대한민국 전북특별자치도 전주시
+      </dd>
+    </div>
+  </dl>
+</section>
+
+<section class="profile-section">
+  <h2>학력 및 전공</h2>
+  <dl class="profile-facts">
+    <div>
+      <dt>학력</dt>
+      <dd>홍익미술유치원, 북가좌초등학교, 서연중학교, 숭문고등학교, 전북대학교</dd>
+    </div>
+    <div>
+      <dt>전공</dt>
+      <dd>본전공: 산업정보시스템공학<br>복수전공: 소프트웨어공학</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="profile-section">
+  <h2>이력</h2>
+  <dl class="profile-timeline">
+    <div>
+      <dt>2021</dt>
+      <dd>포토버스 동아리 부원, 베낭하나 동아리 부원, 총학생회 선거단원</dd>
+    </div>
+    <div>
+      <dt>2023</dt>
+      <dd>제22보병사단 병장 만기전역</dd>
+    </div>
+    <div>
+      <dt>2024</dt>
+      <dd>과학생회 홍보부장</dd>
+    </div>
+    <div>
+      <dt>2025</dt>
+      <dd>과학생회 총무</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="profile-section">
+  <h2>경진대회</h2>
+  <dl class="profile-timeline">
+    <div>
+      <dt>2024</dt>
+      <dd>LG CNS 최적화 경진대회 참여</dd>
+    </div>
+    <div>
+      <dt>2026</dt>
+      <dd>제3회 풍력발전량 예측 AI 경진대회 참여</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="profile-section">
+  <h2>프로젝트</h2>
+  <div class="profile-projects">
+    <h3>학교</h3>
+    <ul class="profile-list">
+      <li>우울증과 삶의 상관관계 분석 <span>(데이터분석과R, 데이터사이언스)</span></li>
+      <li>I/O 최적화 <span>(운영체제)</span></li>
+      <li>QR코드를 이용한 ERP 통합 기반 재고, 자재 자동 호출 시스템 <span>(전사적자원관리)</span></li>
+      <li>스페이스인베이더 게임개발 <span>(소스코드분석)</span></li>
+      <li>부동산 매매가격 데이터 기반 도시 성장률 분석 <span>(데이터마이닝)</span></li>
+      <li>스케치 기반 자동 동적 소프트웨어 프로토타입 생성 시스템 <span>(캡스톤 프로젝트)</span></li>
+    </ul>
+    <h3>개인</h3>
+    <ul class="profile-list">
+      <li>듀얼 노드 리눅스 홈랩 구축</li>
+      <li>Airflow와 AWS를 활용한 주식 데이터 기반 AI 분석 시스템</li>
+    </ul>
+  </div>
+</section>
+
+<section class="profile-section">
+  <h2>수상</h2>
+  <ul class="profile-list">
+    <li>2026 한국정보기술학회 하계종합학술대회 우수논문 동상</li>
+    <li>2026 전북대 RISE 사업단 캡스톤 디자인 경진대회 은상</li>
+  </ul>
+</section>

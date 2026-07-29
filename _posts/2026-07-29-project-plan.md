@@ -1,14 +1,10 @@
 ---
 title: "프로젝트 계획"
-header:
-  overlay_image: ""
-  - backend
+categories:
+  - projects
 tags:
-  - html
-toc : true
-author_profile : false
-sidebar:
-  nav: "docs"
+  - server
+  - infrastructure
 ---
 ## 서버만들기 계획
 
@@ -16,4 +12,4 @@ sidebar:
 서버 사향은 (다음) 이다.<br>
 한대는 인프라 관리, 보안 ,게이트웨이 서버 다른 한대는 실습용 클라우드/DB/애플리케이션 서버로 역할을 나눈다.<br>
 
-## node 1
+## node

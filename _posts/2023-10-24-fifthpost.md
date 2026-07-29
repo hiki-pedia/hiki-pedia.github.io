@@ -1,15 +1,9 @@
 ---
 title: "HTML에 대하여(4)"
-header:
-  overlay_image: "/assets/images/header.jpg"
 categories:
   - frontend
 tags:
   - html
-toc : true
-author_profile : false
-sidebar:
-  nav: "docs"
 ---
 입력 양식 작성하기
 
@@ -100,8 +94,6 @@ sidebar:
 <!-- 이 방법은 앞선 방법보다 복잡해 보이지만 레이블과 사용자 정보를 입력받는 <input>태그가 떨어져 있더라도 둘 사이를 쉽게 연결할 수 있다. -->
 ```
 
-![image](/assets/images/fifthpost(1).jpg)
-
 ## 사용자 입력을 위한 input태그
 
 ### &lt;input&gt;
@@ -109,8 +101,6 @@ sidebar:
 다양한 폼에서 사용자가 입력한 정도를 받을 때 사용.
 
 ### &lt;input&gt; type 속성 한눈에 살펴보기
-
-![image](/assets/images/fifthpost(2).jpg)
 
 ### 텍스트와 비밀번호를 나타내는 type="text"와 type="password"
 
@@ -170,8 +160,6 @@ sidebar:
   </li>
 </ul>
 ```
-
-![image](/assets/images/fifthpost(3).jpg)
 
 ### 체크박스와 라디오 버튼을 나타내는 type="checkbox", type="radio"
 

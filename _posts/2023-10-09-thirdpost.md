@@ -1,15 +1,9 @@
 ---
 title: "HTML에 대하여(2)"
-header:
-  overlay_image: "/assets/images/header.jpg"
 categories:
   - frontend
 tags:
   - html
-toc : true
-author_profile : false
-sidebar:
-  nav: "docs"
 ---
 웹 문서에 다양한 내용 입력하기
 
@@ -25,8 +19,6 @@ sidebar:
 <h3>상품 구성</h3>
 ```
 
-![image](/assets/images/thirdpost(1).jpg){: width="20%"", height="10%""}
-
 ### 텍스트 단락 &lt;p&gt;, 태그 줄을 바꿈 &lt;dr&gt;
 ```html
 카메라의 종류는 대표적으로 DSLR카메라와 필름카메라가 있다.<br>이 둘의 차이는 대표적으로 자동과 수동으로 구별된다.
@@ -38,8 +30,6 @@ sidebar:
 ```html
 <p><blockquote>-알프레드 스티글리츠: 나는 구름을 통해 내 삶의 철학을 기록하고 싶었다. 사진 속에는 현실이 있고 이것은 때때로 진짜 현실보다 더욱 현실적인 불가사의한 힘을 지니고 있다.</blockquote></p>
 ```
-![image](/assets/images/thirdpost(2).jpg)
-
 ### 텍스트 굵게 &lt;strong&gt;, &lt;b&gt;
 
 &lt;strong&gt;은 글자를 굵게 표시해주고 화면 낭독기에서 구별해서 읽어준다. &lt;b&gt;는 단순히 글자만 굵게 표시해준다.
@@ -107,8 +97,6 @@ sidebar:
   </body>
 ```
 
-![image](/assets/images/thirdpost(3).jpg)
-
 ## 목록 만들기
 
 ### 순서 있는 목록 &lt;ol&gt;, &lt;li&gt;(자동으로 번호 부여)
@@ -119,8 +107,6 @@ sidebar:
   <li>항목2</li>
 </ol>
 ```
-
-![image](/assets/images/thirdpost(4).jpg)
 
 #### &lt;ol&gt;의 type, start 속성
 순서 있는 목록은 기본적으로 숫자로 번호를 붙인다. 이때 type속성을 이용하면 영문자나 로마 숫자 등으로 나타낼 수 있다. type="1", type="a", type="A", type="i"&#40;로마 숫자 소문자&#41;, type="I"&#40;로마 숫자 대문자&#41;
@@ -150,14 +136,12 @@ sidebar:
 </dl>
 ```
 
-![image](/assets/images/thirdpost(5).jpg)
-
 ## 표 만들기
 
 ### 표 구성요소
 <p>세로 줄이 <b>열</b>, 가로 줄이 <b>행</b></p>
 
-![image](/assets/images/thirdpost(6).jpg){: width="40%""}
+![image](/assets/images/thirdpost(6).jpg){: width="40%"}
 
 
 ### 표 만들기 &lt;table&gt;, &lt;capton&gt; 태그<br> 셀을 만드는 &lt;tr&gt; &lt;td&gt;<br> 표의 제목 행에 셀을 만들때 &lt;th&gt;
@@ -189,8 +173,6 @@ sidebar:
              // 아래 그림은 따로 설정해준 것이다.
 ```
 
-![image](/assets/images/thirdpost(7).jpg){: width="50%"", height="25%""}
-
 ### 표의 구조를 구성하는 &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;
 
 &lt;thead&gt;는 표의 제목을 뜻하고  &lt;tbody&gt;는 표의 본문, &lt;tfoot&gt;는 표의 요악을 뜻한다. 표의 구조를 지정하면 시작장애인도 화면낭독기를 통해 표를 쉽게 이해할 수 있다. css를 이용해 각각 다른 스타일을 지정할 수 있다. 표의 본문이 길어 한 화면을 넘어갈 경우, 자바스크립트를 통해 thead와 tfoot는 표의 위 아래에 고정하고 tbody만 스크롤하도록 만들 수 있다. 내용이 긴 표를 여러 장 인쇄할 때도 각 장마다 표의 제목과 요약부분이 자동 안쇄되므로 편리하다.
@@ -217,8 +199,6 @@ sidebar:
   <td>52,000원</td>
 </tr>
 ```
-
-![image](/assets/images/thirdpost(8).jpg){: width="50%""}
 
 ### 열을 묶어 주는 &lt;col&gt;, &lt;colgroup&gt;
 
@@ -255,4 +235,3 @@ sidebar:
   </colgroup>
 </table>
 ```
-

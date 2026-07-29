@@ -1,15 +1,9 @@
 ---
 title: "HTML에 대하여(1)"
-header:
-  overlay_image: "/assets/images/header.jpg"
 categories:
   - frontend
 tags:
   - html
-toc : true
-author_profile : false
-sidebar:
-  nav: "docs"
 ---
 HTML 기본 문서 만들기
 
@@ -53,8 +47,6 @@ HTML 기본 문서 만들기
 ## HTML파일 만들기
 
 html에선 자동완성 기능이 제공한다.
-
-![image](/assets/images/secondpost(1).jpg)
 
 ## 라이브 서버 설치하고 바로 결과 확인하기
 
@@ -136,7 +128,6 @@ HTML의 &lt;header&gt;, &lt;section&gt;같은 시맨틱 태그가 나오기 전�
   </div>
 (...생략...)
 ```
-
 
 
 
