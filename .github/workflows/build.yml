@@ -1,0 +1,31 @@
+name: 블로그 빌드
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Jekyll 빌드
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler: "2.5.23"
+          bundler-cache: true
+      - name: 배포 환경으로 사이트 빌드
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --strict_front_matter
