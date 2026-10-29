@@ -2,18 +2,25 @@
 
 Jekyll과 Minimal Mistakes 테마를 기반으로 만든 개인 기술 블로그입니다.
 
+사이트: [hiki-pedia.github.io](https://hiki-pedia.github.io)
+
+글, 프로젝트 설명, 메뉴와 화면 수정 내역을 이 저장소에서 관리합니다.
+테마 원본은 [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes)이며,
+원본 저작권과 라이선스는 [LICENSE](LICENSE)에 남겨두었습니다.
+
 ## 로컬 실행
 
-Ruby 의존성을 설치합니다.
+Ruby 3.3을 사용합니다. 의존성은 커밋된 `Gemfile.lock` 기준으로 설치합니다.
 
 ```bash
-bundle install
+gem install bundler -v 2.5.23
+bundle _2.5.23_ install
 ```
 
 사이트를 빌드합니다.
 
 ```bash
-bundle exec jekyll build
+JEKYLL_ENV=production bundle exec jekyll build --strict_front_matter
 ```
 
 로컬 서버를 실행합니다.
@@ -53,3 +60,14 @@ tags:
 ```
 
 포스트 공통 설정인 `layout`, `toc`, `sidebar`, `author_profile`은 `_config.yml`의 `defaults`에서 관리합니다.
+
+## 변경 관리
+
+`master`를 기준으로 작업 브랜치를 만들고, 글 추가와 화면 수정은 목적별로 커밋을 나눕니다.
+PR에는 수정 이유와 확인한 화면을 남깁니다. 자세한 기준은 [작업 안내](.github/CONTRIBUTING.md)에 있습니다.
+
+PR과 `master` 변경 시 GitHub Actions에서 Jekyll 빌드를 실행합니다.
+이 검사는 문법과 빌드 오류를 확인합니다. 이미지 표시, 모바일 메뉴, 링크 이동은 로컬 화면에서 별도로 확인합니다.
+
+빌드 결과인 `_site/`와 로컬 의존성은 커밋하지 않습니다.
+의존성 버전을 바꿀 때는 `Gemfile`과 `Gemfile.lock`을 함께 확인합니다.
