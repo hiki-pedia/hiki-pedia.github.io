@@ -1,25 +1,16 @@
-name: Documentation
-description: Found a typo or something that needs clarification?
+name: 글·문서 수정
+description: 오탈자, 잘못된 설명, 보완할 내용을 기록합니다.
 body:
-  - type: markdown
+  - type: input
+    id: page
     attributes:
-      value: |
-        Thanks for taking the time to open an issue and help make the docs better.
-
-  - type: textarea
-    id: motivation
-    attributes:
-      label: Motivation
-      description: |
-        Why should we update our docs?
+      label: 수정할 글 또는 문서
     validations:
       required: true
-
   - type: textarea
-    id: suggestion
+    id: change
     attributes:
-      label: Suggestion
-      description: |
-        What should we do instead?
+      label: 수정할 내용과 이유
+      description: 확인한 근거가 있으면 함께 적어주세요.
     validations:
       required: true
