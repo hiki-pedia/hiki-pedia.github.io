@@ -21,6 +21,15 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - name: JavaScript 번들 확인
+        run: |
+          npm ci
+          npm run build:js
+          git diff --exit-code -- assets/js/main.min.js
       - uses: ruby/setup-ruby@v1
         with:
           bundler: "2.5.23"
@@ -29,3 +38,5 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --strict_front_matter
+      - name: 빌드 결과의 이미지·스크립트·스타일 경로 확인
+        run: python3 scripts/check-site.py _site

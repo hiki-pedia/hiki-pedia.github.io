@@ -32,18 +32,19 @@ bundle exec jekyll serve
 JavaScript 번들이 필요할 때는 Node 의존성을 설치한 뒤 실행합니다.
 
 ```bash
-npm install
+npm ci
 npm run build:js
 ```
 
 ## 주요 구조
 
 - `_posts/`: 블로그 글
-- `_pages/`: 카테고리, 검색, 약관 같은 고정 페이지
+- `_pages/`: 프로젝트 목록, 소개, 검색 등 고정 페이지
 - `_data/navigation.yml`: 상단 메뉴와 사이드바 메뉴
 - `_config.yml`: 사이트 설정과 Jekyll 기본값
 - `assets/images/`: 글과 사이트에서 사용하는 이미지
-- `assets/js/`: 테마 JavaScript 원본과 번들
+- `assets/js/`: 메뉴·검색·목차 스크립트와 이미지 확대 기능
+- `scripts/`: 빌드 결과의 내부 자산 경로 검사
 
 ## 글 작성 규칙
 
@@ -67,7 +68,9 @@ tags:
 PR에는 수정 이유와 확인한 화면을 남깁니다. 자세한 기준은 [작업 안내](.github/CONTRIBUTING.md)에 있습니다.
 
 PR과 `master` 변경 시 GitHub Actions에서 Jekyll 빌드를 실행합니다.
-이 검사는 문법과 빌드 오류를 확인합니다. 이미지 표시, 모바일 메뉴, 링크 이동은 로컬 화면에서 별도로 확인합니다.
+이 검사는 빌드 오류, 이미지·스크립트·스타일 경로, JavaScript 번들 갱신 여부를 확인합니다.
+이미지 확대, 검색, 모바일 메뉴는 브라우저에서 별도로 확인합니다.
 
 빌드 결과인 `_site/`와 로컬 의존성은 커밋하지 않습니다.
-의존성 버전을 바꿀 때는 `Gemfile`과 `Gemfile.lock`을 함께 확인합니다.
+의존성 버전을 바꿀 때는 `Gemfile`과 `Gemfile.lock`, `package.json`과 `package-lock.json`을 각각 함께 확인합니다.
+사용하지 않는 댓글·분석 서비스와 추가 스킨은 포함하지 않습니다. 검색은 Lunr, 스타일은 기본 스킨을 사용합니다.

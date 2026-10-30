@@ -40,7 +40,7 @@ bundle exec jekyll serve
 - GitHub Actions의 빌드 결과를 확인합니다. 빌드 통과만으로 화면 확인을 대신하지 않습니다.
 
 `Gemfile.lock`은 함께 관리합니다. 의존성을 올리는 변경은 글 수정과 분리합니다.
-원본 테마 변경을 가져올 때도 별도 브랜치에서 확인하고, 직접 수정한 레이아웃과 스타일을 비교합니다.
+JavaScript를 바꾸면 `npm ci && npm run build:js`로 번들을 만들고 `main.min.js`를 함께 커밋합니다.
 
 ## 되돌리기
 
