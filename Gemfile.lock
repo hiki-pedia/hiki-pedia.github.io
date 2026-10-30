@@ -34,7 +34,6 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-include-cache (0.2.1)
       jekyll (>= 3.7, < 5.0)
-    jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-sitemap (1.4.0)
@@ -76,7 +75,6 @@ DEPENDENCIES
   jekyll (~> 3.9)
   jekyll-feed
   jekyll-include-cache
-  jekyll-paginate
   jekyll-sitemap
   kramdown-parser-gfm (~> 1.1)
   webrick (~> 1.7)

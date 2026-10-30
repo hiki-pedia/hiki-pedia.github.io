@@ -1,5 +1,1 @@
 blank_issues_enabled: true
-contact_links:
-  - name: 원본 테마 사용 안내
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-    about: Minimal Mistakes 자체 설정은 원본 문서를 참고합니다.
