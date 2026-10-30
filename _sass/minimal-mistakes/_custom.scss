@@ -67,8 +67,14 @@
   }
 }
 
+.profile-layout {
+  display: grid;
+  gap: 2rem;
+}
+
 .profile-section {
-  margin: 2rem 0;
+  min-width: 0;
+  margin: 0;
 
   h2 {
     margin: 0 0 0.9rem;
@@ -79,17 +85,38 @@
   }
 }
 
+.profile-row,
+.profile-projects,
+.profile-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+}
+
+.profile-row,
+.profile-projects {
+  align-items: start;
+}
+
 .profile-facts {
   margin: 0;
 
-  div {
+  > div {
     display: grid;
-    grid-template-columns: 7rem 1fr;
-    gap: 1rem;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    min-width: 0;
     padding: 0.65rem 0;
     border-bottom: 1px solid mix(#fff, $border-color, 45%);
   }
 
+  .profile-fact--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.profile-facts,
+.profile-timeline {
   dt {
     margin: 0;
     color: $muted-text-color;
@@ -98,9 +125,11 @@
   }
 
   dd {
+    min-width: 0;
     margin: 0;
     color: $text-color;
     font-size: $type-size-6;
+    overflow-wrap: break-word;
   }
 }
 
@@ -123,41 +152,39 @@
 .profile-timeline {
   margin: 0;
 
-  div {
+  > div {
     display: grid;
-    grid-template-columns: 4.5rem 1fr;
-    gap: 1rem;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.75rem;
     padding: 0.65rem 0;
     border-bottom: 1px solid mix(#fff, $border-color, 45%);
   }
-
-  dt {
-    margin: 0;
-    color: $muted-text-color;
-    font-size: $type-size-6;
-    font-weight: 700;
-  }
-
-  dd {
-    margin: 0;
-    color: $text-color;
-    font-size: $type-size-6;
-  }
 }
 
-.profile-projects {
+.profile-project-group {
+  min-width: 0;
+
   h3 {
-    margin: 1.25rem 0 0.5rem;
+    margin: 0 0 0.75rem;
     color: $muted-text-color;
     font-size: $type-size-6;
   }
 }
 
 @media (max-width: 37.5em) {
-  .profile-facts div,
-  .profile-timeline div {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
+  .profile-row,
+  .profile-projects,
+  .profile-facts {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.5rem;
+  }
+
+  .profile-facts {
+    row-gap: 0;
+
+    > div {
+      grid-template-columns: 4.5rem minmax(0, 1fr);
+    }
   }
 
   .project-image--phone {

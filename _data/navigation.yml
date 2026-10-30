@@ -7,7 +7,7 @@ main:
   - title: "projects"
     url: /projects/
   - title: "mypage"
-    url: /mypage/
+    url: /
     icon: "fas fa-user"
     icon_only: true
     description: "mypage"
