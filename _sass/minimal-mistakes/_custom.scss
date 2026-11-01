@@ -35,6 +35,21 @@
   margin: 1.25em auto;
 }
 
+.project-figure {
+  display: block;
+  text-align: center;
+
+  .project-image {
+    margin: 0 auto 0.65rem;
+  }
+
+  figcaption {
+    font-family: inherit;
+    font-style: normal;
+    line-height: 1.6;
+  }
+}
+
 .project-image--flow {
   max-width: 760px;
   width: 100%;
@@ -189,5 +204,173 @@
 
   .project-image--phone {
     width: 86%;
+  }
+}
+
+.projects-page .archive {
+  padding-right: 0;
+}
+
+.projects-intro {
+  margin: 0 0 1.5rem;
+  color: $muted-text-color;
+  font-size: $type-size-6;
+  line-height: 1.8;
+}
+
+.project-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0.9rem;
+    color: $text-color;
+    font-size: $type-size-6;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $link-color;
+      color: $link-color;
+    }
+  }
+
+  span {
+    color: $muted-text-color;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.project-section {
+  margin: 0 0 3rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.project-section__header {
+  margin-bottom: 1rem;
+
+  h2 {
+    margin: 0;
+    color: $text-color;
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+
+  h2 span {
+    margin-left: 0.35rem;
+    color: $muted-text-color;
+    font-size: 0.75em;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+
+  p {
+    margin: 0.35rem 0 0;
+    color: $muted-text-color;
+    font-size: $type-size-6;
+    line-height: 1.7;
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  min-width: 0;
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  transition: border-color 0.15s ease;
+
+  &:hover,
+  &:focus-within {
+    border-color: $link-color;
+  }
+}
+
+.project-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.15rem;
+  color: $text-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $link-color;
+    outline-offset: 3px;
+  }
+}
+
+.project-card__title {
+  margin: 0 0 0.75rem;
+  font-size: 0.95em;
+  line-height: 1.55;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.project-card__summary {
+  flex: 1;
+  margin: 0 0 1rem;
+  color: $muted-text-color;
+  font-size: $type-size-6;
+  line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.project-card__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    padding: 0.2rem 0.45rem;
+    color: $muted-text-color;
+    font-size: $type-size-7;
+    line-height: 1.5;
+    background: mix($border-color, $background-color, 30%);
+    border-radius: $border-radius;
+  }
+}
+
+.project-card__more {
+  margin-top: auto;
+  color: $link-color;
+  font-size: $type-size-6;
+  font-weight: 700;
+
+  span {
+    margin-left: 0.25rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .project-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

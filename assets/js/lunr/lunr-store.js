@@ -8,6 +8,9 @@ var store = [
       {%- assign l = true -%}
     {%- endif -%}
     {%- assign docs = c.docs | where_exp:'doc','doc.search != false' -%}
+    {%- if site.show_learning_posts == false and c.label == 'posts' -%}
+      {%- assign docs = docs | where_exp:'doc','doc.categories contains "projects"' -%}
+    {%- endif -%}
     {%- for doc in docs -%}
       {%- if doc.header.teaser -%}
         {%- capture teaser -%}{{ doc.header.teaser }}{%- endcapture -%}
@@ -48,6 +51,9 @@ var store = [
     {%- endfor -%}
   {%- endfor -%}{%- if site.lunr.search_within_pages -%},
   {%- assign pages = site.pages | where_exp:'doc','doc.search != false' -%}
+  {%- if site.show_learning_posts == false -%}
+    {%- assign pages = pages | where_exp:'doc','doc.learning != true' -%}
+  {%- endif -%}
   {%- for doc in pages -%}
     {%- if forloop.last -%}
       {%- assign l = true -%}

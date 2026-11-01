@@ -1,8 +1,7 @@
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
+{% assign teaser = post.header.teaser %}
+{% unless post.categories contains "projects" %}
+  {% unless teaser %}{% assign teaser = site.teaser %}{% endunless %}
+{% endunless %}
 
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}

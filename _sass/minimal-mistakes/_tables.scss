@@ -6,10 +6,12 @@ table {
   display: block;
   margin-bottom: 1em;
   width: 100%;
+  max-width: 100%;
   font-family: $global-font-family;
   font-size: $type-size-6;
   border-collapse: collapse;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 
   & + table {
     margin-top: 1em;
@@ -17,19 +19,21 @@ table {
 }
 
 thead {
-  background-color: $border-color;
-  border-bottom: 2px solid mix(#000, $border-color, 25%);
+  background-color: mix($text-color, $background-color, 7%);
 }
 
 th {
-  padding: 0.5em;
   font-weight: bold;
   text-align: left;
 }
 
+th,
 td {
-  padding: 0.5em;
-  border-bottom: 1px solid mix(#000, $border-color, 25%);
+  padding: 0.65em 0.85em;
+  border: 1px solid mix($text-color, $background-color, 22%);
+  line-height: 1.6;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 tr,

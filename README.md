@@ -62,6 +62,12 @@ tags:
 
 포스트 공통 설정인 `layout`, `toc`, `sidebar`, `author_profile`은 `_config.yml`의 `defaults`에서 관리합니다.
 
+프로젝트는 `project_group: personal` 또는 `project_group: school`로 분류하고 `project_order` 순서로 표시합니다.
+카드에 쓰는 설명과 기술 목록은 `_data/project_cards.yml`에서 글의 파일명 슬러그를 기준으로 관리합니다.
+
+포폴 제출 중에는 `_config.yml`의 `show_learning_posts: false`로 학습 메뉴와 검색·관련 글 노출을 숨깁니다.
+학습글 원문과 기존 주소는 유지됩니다. 다시 표시하려면 값을 `true`로 바꾸고 로컬 서버를 다시 시작합니다.
+
 ## 변경 관리
 
 `master`를 기준으로 작업 브랜치를 만들고, 글 추가와 화면 수정은 목적별로 커밋을 나눕니다.

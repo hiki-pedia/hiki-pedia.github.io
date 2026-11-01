@@ -11,7 +11,7 @@ tags:
 
 ### 제목 &lt;h<em>n</em>&gt;
 
-&lt;h<i>n</i>&gt;의 <em>n</em> 숫자가 커질 수록 크키가 작아진다.
+제목은 &lt;h1&gt;부터 &lt;h6&gt;까지 구분한다.
 
 ```html
 <h1>레드향</h2>
@@ -19,30 +19,29 @@ tags:
 <h3>상품 구성</h3>
 ```
 
-### 텍스트 단락 &lt;p&gt;, 태그 줄을 바꿈 &lt;dr&gt;
+### 단락 &lt;p&gt;, 줄바꿈 &lt;br&gt;
 ```html
 카메라의 종류는 대표적으로 DSLR카메라와 필름카메라가 있다.<br>이 둘의 차이는 대표적으로 자동과 수동으로 구별된다.
 ```
 
 ### 인용 &lt;blockquote&gt;
-다른 사람의 말이나 책의 내용을 인용할 때 큰따옴표를 이용해 표기한다. 하지만 웹 브라우저에서는 이렇게 표시한 인용문을 인식할 방법이 없다. 그때 이 태그를 사용한다. 그러면 웹 브라우저는 인용문으로 파악하고 다른 텍스트보다 약간 들여쓴다. 화면 낭독기에서도 다른 텍스트와 구별한다.
+&lt;blockquote&gt;는 긴 인용문을 표시한다.
 
 ```html
 <p><blockquote>-알프레드 스티글리츠: 나는 구름을 통해 내 삶의 철학을 기록하고 싶었다. 사진 속에는 현실이 있고 이것은 때때로 진짜 현실보다 더욱 현실적인 불가사의한 힘을 지니고 있다.</blockquote></p>
 ```
 ### 텍스트 굵게 &lt;strong&gt;, &lt;b&gt;
 
-&lt;strong&gt;은 글자를 굵게 표시해주고 화면 낭독기에서 구별해서 읽어준다. &lt;b&gt;는 단순히 글자만 굵게 표시해준다.
+&lt;strong&gt;은 중요성을 나타내고, &lt;b&gt;는 주의를 끌 텍스트에 사용한다.
 
-### 길울인 텍스트 &lt;em&gt;, &lt;i&gt;
-&lt;em&gt;은 강조를 뜻하는 emphasis의 줄인말이고 &lt;i&gt;는 이탤릭체 즉 italic의 줄인말이다. &lt;em&gt;은 흐름상 특정 부분을 강조할 때 사용하고 &lt;i&gt;는 마음속의 생각이나 용어 관용구 등에 사용한다.
+### 기울인 텍스트 &lt;em&gt;, &lt;i&gt;
+&lt;em&gt;은 강조, &lt;i&gt;는 용어·생각처럼 다른 성격의 텍스트를 나타낸다.
 
 ### 줄임말 표시 &lt;abbr&gt;
  ```html
  <abbr (title)="Internet of Things">IoT</abbr>
  ```
  title 속성과 같이 표기 가능
-
 
 ### 웹 문서나 포스트에서 참고 내용 표시 &lt;cite&gt;
  ```html
@@ -77,7 +76,7 @@ tags:
 <del>삭제할 내용</del>
 ```
 
-### 텍스트 여러게 삽입하기
+### 텍스트 여러 개 삽입하기
 &lt;div id="container"&gt;와 &lt;/div&gt;사이에 코드를 작성한다.
 ```html
 <!DOCTYPE html>
@@ -100,7 +99,7 @@ tags:
 ## 목록 만들기
 
 ### 순서 있는 목록 &lt;ol&gt;, &lt;li&gt;(자동으로 번호 부여)
-목록을 표시할 내용 앞뒤에 각각 &lt;ol&gt;, &lt;/ol&gt; 태그를 두고 그 사이에 &lt;li&gt;, &lt;/li&gt;을 삽입한다.
+&lt;ol&gt; 안에 항목별 &lt;li&gt;를 넣는다.
 ```html
 <ol>
   <li>항목1</li>
@@ -109,16 +108,16 @@ tags:
 ```
 
 #### &lt;ol&gt;의 type, start 속성
-순서 있는 목록은 기본적으로 숫자로 번호를 붙인다. 이때 type속성을 이용하면 영문자나 로마 숫자 등으로 나타낼 수 있다. type="1", type="a", type="A", type="i"&#40;로마 숫자 소문자&#41;, type="I"&#40;로마 숫자 대문자&#41;
-순서 목록은 기본적으로 첫번째 숫자, 문자로 시작하지만 start속성을 사용하여 시작 번호를 바꿀 수 있다.<br>&lt;ol type="a" start="3"&gt;라면 type ="a"의 세번째 즉 "c"부터 목록이 시작된다.
+`type`으로 번호 형식을 지정한다. 값은 `1`, `a`, `A`, `i`, `I`다.
+`start`로 시작 번호를 바꾼다. `type="a" start="3"`은 c부터 시작한다.
 
 ### 순서 없는 목록 &lt;ul&gt;, &lt;li&gt;
-목록을 표시할 내용 앞뒤에 각각 &lt;ul&gt;, &lt;/ul&gt; 태그를 두고 그 사이에 &lt;li&gt;, &lt;/li&gt;을 삽입한다.
-항목 앞에 작은 원이나 사각형을 붙여서 구분하는데 이 것을 불릿<sup>bullet</sup>이라고 한다.
+&lt;ul&gt; 안에 항목별 &lt;li&gt;를 넣는다.
+항목 앞의 원·사각형 표시를 불릿(bullet)이라 한다.
 
 ### 설명 목록 &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;
-설명 목록이란 이름과 값 형태로 된 목록을 말한다. 사전에서 단어명과 설명이 있는 모습을 떠올리면 된다.
-이름&#40;단어명&#41;부분을 지정하는 &lt;dt&gt;태그와 값&#40;설명&#41;부분을 지정하는 &lt;dd&gt;로 구성
+&lt;dl&gt;은 이름과 설명을 묶는 목록이다.
+&lt;dt&gt;에 이름, &lt;dd&gt;에 설명을 넣는다.
 ```html
 <dl>
   <dt>이름</dt>
@@ -143,10 +142,9 @@ tags:
 
 ![image](/assets/images/thirdpost(6).jpg){: width="40%"}
 
+### 표 &lt;table&gt;, 제목 &lt;caption&gt;, 행 &lt;tr&gt;, 셀 &lt;td&gt;·&lt;th&gt;
 
-### 표 만들기 &lt;table&gt;, &lt;capton&gt; 태그<br> 셀을 만드는 &lt;tr&gt; &lt;td&gt;<br> 표의 제목 행에 셀을 만들때 &lt;th&gt;
-
-&lt;table&gt;안에 &lt;caption&gt;태그를 넣어서 표의 제목을 만든다.<br>&lt;tr&gt;은 행&#40;가로&#41; &lt;td&gt;는 열&#40;세로&#41;를 만든다. 이때 &lt;th&gt;태그는 진하게 표시되고 셀 중앙에 배열된다. 아래 코드로 만든 결과를 확인해 보자.
+&lt;caption&gt;은 표 제목, &lt;tr&gt;은 행, &lt;td&gt;는 셀, &lt;th&gt;는 헤더 셀이다.
 
 ```html
 <table>
@@ -175,11 +173,11 @@ tags:
 
 ### 표의 구조를 구성하는 &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;
 
-&lt;thead&gt;는 표의 제목을 뜻하고  &lt;tbody&gt;는 표의 본문, &lt;tfoot&gt;는 표의 요악을 뜻한다. 표의 구조를 지정하면 시작장애인도 화면낭독기를 통해 표를 쉽게 이해할 수 있다. css를 이용해 각각 다른 스타일을 지정할 수 있다. 표의 본문이 길어 한 화면을 넘어갈 경우, 자바스크립트를 통해 thead와 tfoot는 표의 위 아래에 고정하고 tbody만 스크롤하도록 만들 수 있다. 내용이 긴 표를 여러 장 인쇄할 때도 각 장마다 표의 제목과 요약부분이 자동 안쇄되므로 편리하다.
+&lt;thead&gt;는 헤더, &lt;tbody&gt;는 본문, &lt;tfoot&gt;는 요약 영역을 묶는다. 영역별 스타일과 표 구조를 지정할 수 있다.
 
-### 행이나 열을 합치는 &lt;rowspan&gt;, &lt;colspan&gt;
+### 행·열 병합: rowspan·colspan
 
-<b>행</b>을 합치려면 <b>rowspan</b>속성을 이용하고 <b>열</b>을 합치려면 <b>colspan</b>을 이용하면 된다.
+`rowspan`은 행, `colspan`은 열을 합친다.
 
 ```html
 <td rowspan="합칠 셀의 개수">셀의 내용</td>
@@ -202,14 +200,14 @@ tags:
 
 ### 열을 묶어 주는 &lt;col&gt;, &lt;colgroup&gt;
 
-단순히 표를 만들기만 하는 것이 아니라 특정 열에 배경색을 넣거나 너비를 바꾸려면 원하는 열을 선택할 수 있어야 한다. &lt;col&gt;는 열을 1개만 지정하고 &lt;colgroup&gt;는 &lt;col&gt;태그를 2개 이상 묶어서 사용한다.
+&lt;col&gt;은 열, &lt;colgroup&gt;은 열 그룹을 지정한다. 배경색·너비 등을 적용할 때 사용한다.
 
 ```html
 <colgroup>
   <col>
 </colgroup>
 ```
-<p>&lt;colgroup&gt;, &lt;col&gt;태그는 반드시 &lt;caption&gt;태그 다음에 써야한다. 즉 표의 내용이 시작되기 전에 열의 상태를 알려주는 것. &lt;col&gt;태그를 사용할 때에는 &lt;colgroup&gt;태그 안에 &lt;col&gt;태그를 포함해 표 전체 열의 개수만큼 &lt;col&gt;태그를 넣어야 한다. 이 말을 해석하자면 아래 코드를 보면 첫 번째 열에만 배경색을 지정하고 세번째 열과 네번째 열의 너비를 150px로 지정한 코드이다. 이때 스타일 속성이 없는 두번째 열에도 단순히 &lt;col&gt;태그를 명시해야 한다.</p>
+&lt;colgroup&gt;은 &lt;caption&gt; 다음, 행 내용 앞에 둔다. 아래 예제는 첫 열의 배경색과 세 번째·네 번째 열의 너비를 지정한다.
 
 ```html
 <table>
@@ -223,7 +221,7 @@ tags:
 </table>
 ```
 
-이때 같은 스타일 속성을 사용하는 &lt;col&gt;태그가 있다면 span 속성을 사용해서 묶어 줄 수 있다.
+같은 스타일을 여러 열에 적용할 때는 `span`으로 묶는다.
 
 ```html
 <table>

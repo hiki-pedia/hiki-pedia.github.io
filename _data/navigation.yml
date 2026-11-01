@@ -1,10 +1,11 @@
-# main links
 main:
   - title: "frontend"
     url: /frontend/
+    learning: true
   - title: "backend"
     url: /backend/
-  - title: "projects"
+    learning: true
+  - title: "Projects"
     url: /projects/
   - title: "mypage"
     url: /
@@ -14,10 +15,14 @@ main:
 
 docs:
   - title: "CONTENTS"
-    children: 
+    children:
       - title: "frontend"
         url: /frontend/
+        learning: true
       - title: "backend"
         url: /backend/
-      - title: "projects"
-        url: /projects/
+        learning: true
+      - title: "개인 프로젝트"
+        url: /projects/#personal-projects
+      - title: "학업 프로젝트"
+        url: /projects/#academic-projects

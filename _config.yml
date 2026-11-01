@@ -10,6 +10,8 @@ teaser: /assets/images/default-teaser.png
 logo: /assets/images/4396623.png
 breadcrumbs: true
 words_per_minute: 100
+# 학습 메뉴와 글을 다시 표시하려면 true로 바꿉니다.
+show_learning_posts: false
 search: true
 search_full_content: true
 after_footer_scripts:
@@ -20,7 +22,7 @@ naver_site_verification: ee1ed77a6f291d1035601fb0d0d9508838c43045
 author:
   name: Woo heeseok
   avatar: /assets/images/IMG_3964.jpg
-  bio: I am a **visionary** man.
+  bio: "모든일엔 뜻이 있고<br>그 속에 배움이 있다."
   location: Seoul/Korea <br>   Jeonju/Korea
   email: milkheesuk@naver.com
   links:

@@ -1,0 +1,17 @@
+{% assign project = include.project %}
+{% assign card = site.data.project_cards[project.slug] %}
+{% assign project_technologies = card.technologies | default: project.tags %}
+<article class="project-card">
+  <a class="project-card__link" href="{{ project.url | relative_url }}" aria-labelledby="project-title-{{ project.slug }}" aria-describedby="project-summary-{{ project.slug }}">
+    <h3 id="project-title-{{ project.slug }}" class="project-card__title">{{ project.project_list_title | default: project.title }}</h3>
+    <p id="project-summary-{{ project.slug }}" class="project-card__summary">{{ card.summary | default: project.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
+    {% if project_technologies.size > 0 %}
+      <ul class="project-card__technologies" aria-label="주요 기술">
+        {% for technology in project_technologies %}
+          <li>{{ technology }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <span class="project-card__more" aria-hidden="true">자세히 보기 <span>→</span></span>
+  </a>
+</article>

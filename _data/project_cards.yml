@@ -1,0 +1,31 @@
+project-plan:
+  summary: 두 대의 PC에 Ubuntu를 설치하고 내부 네트워크와 WireGuard·SSH 원격 접속을 구성했습니다.
+  technologies: [Ubuntu 22.04 LTS, WireGuard, SSH 공개키 인증, UDP 포트포워딩, DDNS]
+
+chartmaster-ai-stock-data-platform:
+  summary: 시장 데이터의 수집·저장·검증을 자동화하고 분석 결과를 조회하는 파이프라인을 만듭니다.
+  technologies: [Apache Airflow, PostgreSQL, Docker Compose, pandas, ETL, Catchup·재처리]
+
+minecraftgameserver:
+  summary: Linux·Docker 기반 게임서버에 TCP 프록시, 자원 제한, 지표 수집·시각화, 검증을 포함한 자동 백업을 구성했습니다.
+  technologies: [Linux, Docker Compose, Nginx TCP 프록시, Prometheus·Grafana, CPU·메모리 제한, 백업 자동화, WireGuard·SSH]
+
+depression-life-analysis:
+  summary: 생활·업무 요인과 우울증의 관계를 분석하고 예측 모델을 구축했습니다.
+  technologies: [Python, 로지스틱 회귀, 의사결정나무, K-Means, StandardScaler]
+
+io-optimization:
+  summary: 작업을 CPU·I/O 중심으로 분류하고 스케줄링 방식에 따른 차이를 비교했습니다.
+  technologies: [Python, psutil, Random Forest, PCA, SJF·Round-Robin, SSTF·SCAN]
+
+erp-material-request-system:
+  summary: QR 스캔부터 자재 요청, 재고 조회, ERP 데이터베이스와 관리자 처리까지 연결했습니다.
+  technologies: [React, Node.js, Express, SQL Server, SQL 트랜잭션]
+
+real-estate-growth-analysis:
+  summary: 아파트 실거래 데이터를 정제·집계해 지역별 성장 패턴과 가격 양극화를 분석했습니다.
+  technologies: [PostgreSQL·Neon, XGBoost, Random Forest, PCA·K-Means, Isolation Forest, CPI 보정]
+
+sketchflow-prototype-generation:
+  summary: 손그림 UI와 요구사항을 구조화해 실행 가능한 웹 프로토타입으로 만드는 캡스톤 프로젝트입니다.
+  technologies: [Next.js·React, FastAPI, SQLite, JSON Schema·AJV, JSON Patch, LLM 코드 생성]
