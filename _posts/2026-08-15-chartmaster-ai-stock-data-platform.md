@@ -1,6 +1,7 @@
 ---
 title: "ChartMaster: Airflow와 AWS를 활용한 주식 데이터 기반 AI 분석 시스템"
 date: 2026-08-15 09:00:00 +0900
+last_modified_at: 2026-11-13 00:00:00 +0900
 categories:
   - projects
 tags:
@@ -11,440 +12,266 @@ tags:
   - postgresql
   - stock-data
   - mlops
+  - aws
 project_group: personal
 project_order: 2
 project_list_title: "Airflow와 AWS를 활용한 주식 데이터 기반 AI 분석 시스템"
 ---
 
-## 프로젝트 개요
+## 개요
 
-한국·미국 주식 데이터를 수집·저장하는 파이프라인이다. 이 주제를 선정한 이유는 차트로 미래 가격을 예측한다는 것은 주식에서 굉장히 위험한 것이다. 하지만 매일매일 일정한 데이터를 생성해내는 분야이기 때문에 airflow를 사용해보기 적합할 것 같았다. 
+한국·미국 주식 데이터를 수집하고, 품질 검사와 모델 실행 결과를 대시보드로 제공하는 학습형 플랫폼이다. 매일 새로운 데이터가 생기고 거래 시간·휴장·과거 데이터 정정까지 다뤄야 하므로 Airflow와 데이터 운영을 실습할 소재로 선택했다.
 
-Ubuntu 서버 2대를 실행 계층과 저장 계층으로 나눴다.
+목표는 주가를 잘 맞히는 서비스보다 **수집·재처리·복구·클라우드 연동을 직접 설계하고 운영하는 경험**이다. Ubuntu 서버 2대를 실행 계층과 저장 계층으로 나누고, 로컬 PC의 Electron에서 결과를 확인한다.
 
-| 항목 | 현재 상태 |
+| 영역 | 구성 |
 | --- | --- |
-| 데이터 소스 | yfinance |
-| 관리 자산 | 한국·미국 주식 및 ETF 29개 |
-| 실행 환경 | Ubuntu 홈서버 2대, Docker Compose |
-| 오케스트레이션 | Apache Airflow 2.10.5, LocalExecutor |
-| 파일 저장소 | Server 2의 SSH 파일 저장소 |
-| 메타데이터 DB | Server 2의 PostgreSQL 16 |
-| 구현 범위 | Phase 1 완료, Phase 2 운영 중 |
-| 다음 단계 | Electron 대시보드 Mock Prototype |
+| 데이터 | yfinance 기반 한국·미국 주식·ETF 29개 |
+| 실행 | 서버1, Python, Docker Compose, Airflow 2.10.5 |
+| 저장 | 서버2 SSH 파일 저장소, PostgreSQL 16 |
+| 조회 | FastAPI, Electron·React·TypeScript |
+| 모델 | Random Forest, XGBoost, LSTM, Transformer-lite, Ensemble 비교 |
+| AWS | 서울 S3 외부 복제, 최소 권한 IAM |
 
-> 투자 추천용이 아니다. 모델의 예측 성능보다 데이터 수집·재처리·운영 검증에 초점을 뒀다.
+> 투자 추천용이 아니다. 과거 구현 결과와 현재 실행 상태를 구분하고, 모델 성능과 운영상 한계도 함께 기록한다.
 
-## 프로젝트를 시작한 이유
+## 진행 단계
 
-매일 갱신되는 주식 데이터로 Airflow 수집·재처리를 실습하려고 시작했다. 채용공고 수집보다 모델 재학습과 외부 요인 분석까지 확장하기 좋다고 판단했다.
+| Phase | 주제 | 진행 |
+| --- | --- | --- |
+| 1 | 수집·저장 | 백필, 피처, 메타데이터 구현 |
+| 2 | Airflow | 시장별 자동 수집·누락 복구 구현 |
+| 3 | Electron | 화면·차트 구현 |
+| 4 | FastAPI | 실데이터·예측·실행 상태 연결 |
+| 5 | 품질 | 검사·curated·재처리 구현 |
+| 6 | 운영 | 백업·임시 복원·장애 실험 수행 |
+| 7 | 모델 | 비교·선정·일별 예측 연결 |
+| 8 | RAG | 보류 |
+| 9 | AWS 저장 | S3 복제 구현, 정기 실행 관찰 필요 |
+| 10 | AWS 학습 | SageMaker 필요 시 학습 계획 |
 
-한국장·미국장은 거래 시간이 다르고, 신규 종목은 이력이 짧다. 제공자가 과거 데이터를 정정하기도 한다. 기업 실적·금리·환율·뉴스는 이후 분석 대상으로 남겼다.
+Phase 번호가 실제 작업 순서와 항상 같지는 않다. 화면과 API처럼 먼저 경계를 정할 부분을 진행하고, 품질·운영 작업은 이후에도 보강했다.
 
-다음 순서로 확장할 계획이다.
+## 구조
 
 ```text
-정기 수집과 백필
-  -> 누락·중복 처리
-  -> Raw / Processed / Curated 저장 계층
-  -> 실행 및 데이터셋 메타데이터
-  -> 모델 학습과 평가 이력
-  -> 뉴스·리포트 기반 외부 요인 분석
-  -> API와 데스크톱 대시보드
-  -> AWS 관리형 서비스 이전
+로컬 PC Electron
+    -> 서버1 FastAPI -> 서버2 저장된 결과 조회
+
+서버1 Airflow
+    -> 수집 / 정제 / 품질 / 모델 학습·예측
+    -> 서버2 파일 저장소 + PostgreSQL 메타데이터
+    -> AWS S3 외부 복제
+
+서버2 주간 백업
+    -> 파일 archive + PostgreSQL dump
 ```
 
-우선 목표는 재실행과 장애 복구가 가능한 수집 파이프라인이다.
+Airflow 내부 DB는 서버1에, 프로젝트 메타데이터 DB는 서버2에 뒀다. DAG 실행 상태와 데이터셋·모델 기록의 역할을 분리하기 위해서다.
 
-## 전체 Phase 계획
-
-| Phase | 작업 | 구현 항목 | 상태 |
-| --- | --- | --- | --- |
-| 1 | 데이터 수집·저장 | 종목 설정, OHLCV 백필, SSH 저장, 피처 생성, 메타데이터 기록 | 완료 |
-| 2 | 수집 자동화 | 시장별 DAG, Catchup, 10일 재수집, 중복 제거, 재시도 | 운영 중 |
-| 3 | 화면 초안 | Electron 화면, Mock JSON | 다음 단계 |
-| 4 | 데이터 API | FastAPI, Mock·실데이터 전환 | 계획 |
-| 5 | 품질 검사 | 기간·누락·중복 검사, 백필·재처리 | 계획 |
-| 6 | 백업·복구 | 파일·DB 백업, 복원·장애 훈련, 모니터링 | 계획 |
-| 7 | 모델 학습 | 기준 모델, 시계열 검증, 평가 지표·버전 기록 | 계획 |
-| 8 | 외부 요인 분석 | 뉴스·문서 수집, RAG, 감성 분석, 리포트 | 계획 |
-| 9 | AWS 저장소 | S3·RDS 이전 | 계획 |
-| 10 | AWS 학습·운영 | SageMaker 학습, CloudWatch 로그·지표·비용 점검 | 계획 |
-
-## 기술 구성
-
-| 영역 | 현재 사용 | 이후 도입 계획 |
-| --- | --- | --- |
-| Language | Python 3.10 | TypeScript |
-| Data Collection | yfinance | pykrx 등 국내 데이터 소스 비교 |
-| Data Processing | pandas | 필요 시 Parquet 기반 처리 |
-| Workflow | Apache Airflow 2.10.5 | AWS 연동 Operator |
-| Runtime | Docker, Docker Compose | AWS 관리형 실행 환경 검토 |
-| Storage | Server 2 SSH 파일 저장소 | Amazon S3 |
-| Metadata DB | PostgreSQL 16 | Amazon RDS PostgreSQL |
-| ML | scikit-learn | SageMaker, 시계열 딥러닝 실험 |
-| API | 미구현 | FastAPI |
-| Desktop | 미구현 | Electron |
-| AI/RAG | 구조 및 모듈 초안 | 문서 수집, Embedding, Vector Index, AI Report |
-
-## 현재 아키텍처
+실제 시계열·모델은 파일에 저장하고 PostgreSQL에는 실행 상태, 저장 위치, 행 수, 날짜 범위와 평가 지표를 기록한다.
 
 ```text
-                         Server 1
-                  Compute / Orchestration
-                ┌─────────────────────────┐
-                │ Docker Compose          │
-                │ ├─ Airflow Webserver    │
-                │ ├─ Airflow Scheduler    │
-                │ └─ Airflow PostgreSQL   │
-                │                         │
-                │ Python ETL              │
-                │ Feature Engineering     │
-                └────────────┬────────────┘
-                             │
-                    SSH      │      PostgreSQL
-               file read/write        metadata
-                             │
-                ┌────────────▼────────────┐
-                │        Server 2         │
-                │ Data / Persistence      │
-                │                         │
-                │ File Storage            │
-                │ ├─ raw                  │
-                │ ├─ processed            │
-                │ ├─ curated              │
-                │ └─ models               │
-                │                         │
-                │ PostgreSQL 16           │
-                └─────────────────────────┘
-```
-
-Airflow 내부 상태와 프로젝트 메타데이터의 수명주기가 달라 DB를 분리했다.
-
-| 저장소 | 위치 | 역할 |
-| --- | --- | --- |
-| Airflow Metadata DB | Server 1 Docker | DAG Run, Task Instance 등 Airflow 내부 상태 |
-| ChartMaster Metadata DB | Server 2 Docker | 자산, 파이프라인 실행, 데이터셋 위치와 행 수 |
-| ChartMaster File Storage | Server 2 파일시스템 | OHLCV 원본과 피처 데이터 |
-
-## 데이터 저장 규칙
-
-시계열은 파일에, 실행·파일 메타데이터는 PostgreSQL에 저장했다.
-
-```text
-/home/dnhs02/iwantdataengineer/chartmaster/
-├── raw/
-│   └── market_data/
-│       └── provider=yfinance/
-│           └── symbol={symbol}/
-│               └── data.csv
-├── processed/
-│   └── features/
-│       └── symbol={symbol}/
-│           └── data.csv
-├── curated/
-├── models/
-├── reports/
+서버2 ~/iwantdataengineer/chartmaster/
+├── raw/         # 공급자별 원본
+├── curated/     # 교차 검증·보완한 데이터
+├── processed/   # 피처
+├── models/      # 모델 산출물
+├── reports/     # 품질·평가·예측 결과
 ├── logs/
 └── backups/
 ```
 
-`provider`와 `symbol`을 경로에 넣었다. AWS 이전 시 같은 구조를 S3 Prefix로 사용할 계획이다.
+`provider`와 `symbol`을 경로에 넣었고, S3에서도 같은 상대 경로를 사용했다. 다만 현재 주 저장소와 API 읽기 경로는 여전히 서버2다.
 
-```text
-local  /raw/market_data/provider=yfinance/symbol=005930.KS/data.csv
-AWS    s3://<bucket>/raw/market_data/provider=yfinance/symbol=005930.KS/data.csv
-```
+## Phase 1. 수집
 
-## Phase 1. 시장 데이터 백필과 저장 계층 구현
+### 종목과 원천
 
-### 목표
+먼저 Airflow 없이 실행할 수 있는 ETL을 만들었다. 수집 로직 오류와 스케줄러 오류를 분리해서 확인하기 위해서다.
 
-먼저 독립 실행 ETL을 만들었다. ETL 오류와 Airflow 오류를 나눠 진단하기 위해서다.
+`config/assets.json`에서 심볼·시장·거래소·자산 유형·모델링 등급을 관리하고 `--market`, `--tier`, `--symbols`로 수집 대상을 선택한다. 일반 자산은 `core`, 짧은 이력이나 레버리지 특성이 있는 자산은 `experimental`로 구분했다.
 
-### 1. 자산 레지스트리
-
-`config/assets.json`에서 종목을 관리한다. 설정 필드는 다음과 같다.
-
-```text
-symbol
-display_name
-market
-exchange
-asset_type
-group
-modeling_tier
-notes
-```
-
-`--market`, `--tier`, `--symbols`로 대상을 선택한다. 일반 자산은 `core`, 신규·레버리지 자산은 `experimental`로 구분했다.
-
-### 2. OHLCV 수집과 정규화
-
-`YFinanceMarketDataProvider`가 자산과 날짜 범위를 받아 다음 열을 반환한다.
+수집 필드는 다음과 같다.
 
 ```text
 date, open, high, low, close, adjusted_close, volume
 ```
 
-수집 결과는 저장 전에 다음 순서로 정규화한다.
+공급자가 제공하는 과거 이력은 상장 이후 전체 기간과 다를 수 있었다. 시작일을 더 과거로 지정해도 없는 데이터가 생기지는 않으므로, 실제 반환된 시작일과 종료일을 확인해야 했다.
 
-1. 필요한 일곱 개 열만 선택한다.
-2. `date`를 날짜 타입으로 통일한다.
-3. 날짜 오름차순으로 정렬한다.
-4. 동일 날짜가 여러 번 존재하면 마지막 행을 유지한다.
-5. 인덱스를 다시 생성한다.
+### 병합과 저장
 
-기존 파일과 새 수집 데이터에 같은 정규화를 적용했다.
-
-### 3. 기존 데이터와 병합
-
-기존 raw CSV와 새 데이터를 합친 뒤 날짜로 정렬하고 중복을 제거했다.
+날짜를 통일하고 오름차순 정렬한 뒤 중복을 제거했다. 기존 raw와 새 데이터를 합칠 때는 같은 날짜의 새 행을 유지한다.
 
 ```text
-existing raw CSV
-       +
-newly fetched rows
-       │
-       ▼
-concat -> sort by date -> deduplicate -> overwrite merged CSV
+기존 raw + 새 수집 데이터
+    -> 날짜 정렬 -> 중복 제거 -> 병합 파일 저장
 ```
 
-같은 기간을 재수집해도 날짜별 행은 하나만 남는다. 전체 교체는 `--replace-existing`로 실행한다.
+반복 실행해도 날짜별 행이 늘어나지 않도록 했으며, 전체 교체는 `--replace-existing`으로 명시적으로 구분했다. 저장소는 `LocalObjectStorage`와 `SshObjectStorage`로 분리하고 실제 운영 데이터는 서버2에 저장했다.
 
-### 4. SSH 기반 파일 저장소
+### 피처와 기록
 
-Server 1에서 SSH로 Server 2 파일을 읽고 쓴다. 저장소는 `ObjectStorage` 인터페이스로 분리했다.
-
-| 구현체 | 사용 상황 |
-| --- | --- |
-| `LocalObjectStorage` | 격리된 로컬 테스트와 디버깅 |
-| `SshObjectStorage` | 홈랩 Server 2에 실제 데이터 저장 |
-
-SSH Batch Mode와 전용 키를 사용한다. 파일은 표준 입력으로 쓰고 DataFrame으로 읽는다.
-
-S3 저장소 구현을 추가해도 수집·피처 생성 코드는 유지할 수 있다.
-
-### 5. 피처 생성
-
-raw OHLCV에서 다음 피처를 생성한다.
-
-| 피처 | 계산 방식 |
-| --- | --- |
-| `turnover_value` | `close × volume` |
-| `return_1d` | 1거래일 수익률 |
-| `return_5d` | 5거래일 수익률 |
-| `return_20d` | 20거래일 수익률 |
-| `volume_change_1d` | 거래량 1일 변화율 |
-| `moving_average_5` | 종가 5일 이동평균 |
-| `moving_average_20` | 종가 20일 이동평균 |
-| `volatility_5` | 1일 수익률의 5일 이동 표준편차 |
-| `volatility_20` | 1일 수익률의 20일 이동 표준편차 |
-
-초기 분류 모델을 위한 타깃도 함께 생성한다.
+수익률, 이동평균, 변동성, 거래량 변화율 등을 생성하고 이후 RSI·MACD·Bollinger·ATR·모멘텀을 추가했다. `close × volume`은 거래대금 근사값이며 거래소의 공식 거래대금과 같지는 않다.
 
 ```text
 future_5d_return = close(t+5) / close(t) - 1
 target_positive_5d_return = future_5d_return > 0
 ```
 
-미래 가격이 없는 마지막 5개 행은 타깃을 결측값으로 두고 학습에서 제외했다.
+미래 가격이 없는 마지막 5개 행의 타깃은 결측값으로 두고 학습에서 제외한다. 미래 수익률과 타깃 자체를 학습 입력으로 사용하지 않는다.
 
-### 6. PostgreSQL 메타데이터 기록
+메타데이터는 `assets`, `pipeline_runs`, `datasets`에 기록하고, 후속 단계에서 `data_quality_issues`, `model_versions`, `model_metrics`도 활용했다. 종목별 실패는 정상 결과와 분리해 `partial_success`로 남겼다.
 
-ETL 시작 시 `pipeline_runs`에 `running` 상태를 기록하고, 처리 완료 후 `success`, `partial_success`, `failed` 중 하나로 갱신한다.
+초기 확인 당시에는 자산 29개, raw 약 21MB, processed 약 64MB, 성공 실행 34건과 datasets 712행을 기록했다. 이 수치는 현재 용량·실행 횟수가 아니라 초기 구현 시점의 결과다.
 
-```text
-pipeline start
-  -> pipeline_runs: running
-  -> asset registry upsert
-  -> asset별 raw 저장
-  -> asset별 processed 저장
-  -> datasets metadata 기록
-  -> pipeline_runs 상태 갱신
-```
+## Phase 2. 자동화
 
-현재 구현된 테이블은 다음과 같다.
+### 시장별 실행
 
-| 테이블 | 구현한 역할 |
+서버1에서 Airflow webserver·scheduler·내부 PostgreSQL을 Compose로 실행했다. `airflow-init`가 초기화하며 UI는 호스트 8081 포트를 사용한다.
+
+| DAG | 실행 시각 | 시간대 |
+| --- | --- | --- |
+| `daily_kr_market_data_etl` | 평일 16:10 | Asia/Seoul |
+| `daily_us_market_data_etl` | 평일 17:30 | America/New_York |
+
+미국장은 고정 한국 시각으로 환산하지 않고 시장 시간대를 사용해 DST를 처리했다. 시장 기준 날짜는 실제 실행 시각이 아니라 `data_interval_end`에서 얻는다.
+
+### 누락 복구
+
+초기에는 Catchup과 10일 overlap을 사용했지만, 현재는 **`catchup=False` + 저장 데이터 기반 복구**로 바꿨다. 서버가 오래 꺼져 있어도 과거 실행을 모두 만들기보다 최신 실행에서 필요한 수집 범위를 확장한다.
+
+1. 최근 5달력일은 정정 반영을 위해 다시 수집한다.
+2. 수집 전에 기존 날짜와 예정 거래 세션을 최신부터 5거래일씩 비교한다.
+3. 블록에 누락이 있으면 시작일을 확장하고 이전 블록도 확인한다.
+4. 완전한 블록을 만나거나 최대 52블록에 도달하면 멈춘다.
+5. 확장한 기간을 받아 기존 데이터와 병합·중복 제거한다.
+
+실패 DAG 이력을 성공으로 바꾸는 기능은 아니다. 완전한 최근 블록보다 오래된 내부 공백이나 최초 전체 이력은 품질 검사와 별도 백필로 다룬다.
+
+### 재시작과 재시도
+
+태스크는 20분 간격으로 최대 3회 재시도하고 `max_active_runs=1`로 DAG별 동시 실행을 제한했다. `depends_on_past=False`로 이전 실패가 다음 실행을 막지 않도록 했다.
+
+컨테이너에는 `restart: unless-stopped`를 적용했다. 다만 Docker 부팅 시작, DAG 비일시정지, 인증·네트워크까지 맞아야 하므로 재시작 정책 하나로 무조건 복구되는 것은 아니다.
+
+> [사진 삽입: Airflow Graph 화면 — 한국장 또는 미국장 DAG의 수집·품질·예측·S3 분기가 보이도록 캡처]
+
+## Phase 3. 화면
+
+Electron은 Mock 데이터로 정보 구조부터 잡고 실제 데이터로 연결했다. 종목별 가격·거래량·이동평균, 최신 데이터 날짜와 품질 상태를 한 화면에서 확인할 수 있게 했다.
+
+전체 기간과 `5Y / 1Y / 6M / 1M / 5D`를 제공하고, hover로 날짜·OHLCV를 확인하도록 했다. 처음에는 선택 기간만 받아 과거로 이동하면 빈칸이 나왔다. 전체 이력을 유지한 채 보이는 범위만 바꾸는 방식으로 수정했다.
+
+> [사진 삽입: Electron 종목 화면 — 전체 또는 1년 차트, 기간 버튼, 데이터 기준일이 함께 보이도록 캡처]
+
+전체 차트에서 짧은 예측이 보이지 않는 문제는 최근 구간을 확대한 작은 차트로 분리해 해결했다. 품질 경고와 확인 필요 상태도 개수만 보여주지 않고 상세 내용을 확인하도록 보완했다.
+
+## Phase 4. API
+
+Electron이 서버2 파일·DB에 직접 연결하지 않도록 서버1 FastAPI를 제공 계층으로 뒀다. API는 저장된 가격·품질·예측 결과와 Airflow 실행 이력을 전달한다. 화면을 열 때마다 모델을 재학습하지는 않는다.
+
+Mock과 Live 출처를 구분하고 Live 연결 실패를 Mock 성공 화면으로 숨기지 않았다. 데이터가 최신인 것과 Airflow 실패 이력이 없는 것은 다르므로 상태도 따로 표시한다.
+
+이 구조 덕분에 저장소와 인증 정보는 서버 쪽에 두고, 로컬 PC는 API 주소만 설정해 결과를 볼 수 있다. 현재 API 자체 인증은 없으므로 LAN/VPN 내부에서만 사용한다. CORS는 사용자 인증의 대체 수단이 아니다.
+
+## Phase 5. 품질
+
+날짜 사이의 공백이 모두 누락은 아니었다. 주말·휴장과 실제 누락을 구분하기 위해 거래소 세션을 기준으로 검사했다. 필수 값·최신성·중복·피처 정합성을 확인하고, 공급자 보정 방식처럼 단정하기 어려운 항목은 경고로 분리했다.
+
+Yahoo 원천에서 OHLC 관계 모순과 보정주가 이상을 발견했다. 원본은 보존하고 `pykrx_naver`로 교차 확인한 결과를 curated에 저장했다. 이 경로는 Naver 기반이므로 독립 KRX 원천 검증과 동일하다고 보지는 않았다.
+
+당시에는 OHLC 이상 16행과 누락 거래 세션 5개를 보완했다. 최종 검사 기록은 29종목 통과·오류 0·경고 1이었으며 남은 경고는 SK하이닉스 과거 보정주가 이상 778행이었다. 이는 해당 검사 시점의 결과다.
+
+> [사진 삽입: Electron 데이터 검증 화면 — 종목별 경고 코드·설명·영향 행 수·검사 기준일이 보이도록 캡처]
+
+백필은 공급자를 다시 조회하는 작업이고 재처리는 저장된 데이터로 피처를 다시 만드는 작업이다. 이를 분리하고 품질 오류가 있으면 후속 예측·S3 복제를 막는 gate를 추가했다.
+
+## Phase 6. 복구
+
+서버2 파일과 PostgreSQL을 따로 백업하고 실제 복원도 확인했다. 파일은 tar archive로, DB는 `pg_dump`로 만들고 운영 DB 대신 임시 DB에 복원했다.
+
+이후 매주 일요일 03:00 KST에 `weekly_chartmaster_backup`을 실행하도록 구성했다. tar 목록·gzip·SHA256 검사를 통과해야 성공하며 기존 백업을 자동 삭제하지는 않는다.
+
+2026-11-02 검증에서는 파일 백업 191,475,818 bytes와 DB dump 165,684 bytes의 무결성을 확인했다. FastAPI·Airflow 재시작, 품질 실패와 SSH 실패 시뮬레이션도 수행했다. 운영 영향이 큰 PostgreSQL 강제 중단 실험은 보류했다.
+
+> [사진 삽입: Airflow 주간 백업 태스크 로그 — 성공 상태와 파일·DB 백업 크기, 무결성 검사 결과가 보이도록 캡처]
+
+백업 파일이 존재하는 것과 복원할 수 있는 것은 다르다. 같은 서버 디스크의 백업만으로 물리 장애까지 대비할 수도 없으므로 외부 사본도 별도로 검토했다.
+
+## Phase 7. 모델
+
+문제를 ‘5거래일 뒤 상승 여부’로 좁히고 전체 기간·2020년 이후·최근 5년 데이터셋을 나누어 검토했다. 오래된 차트가 횡보처럼 보인다는 이유만으로 제외하기보다 구간별 결과를 비교하려 했다.
+
+시간순으로 학습·검증·test를 나누고 검증 구간에서 threshold를 선택했다. 아래는 전체 기간 비교의 과거 실행 결과이며 모델별 평가 가능한 행이 달라 동일 subset 비교도 함께 확인해야 한다.
+
+| 모델 | Test F1 | Test ROC-AUC |
+| --- | ---: | ---: |
+| Random Forest | 0.6715 | 0.5252 |
+| XGBoost | 0.6817 | 0.5417 |
+| LSTM | 0.7238 | 0.5091 |
+| Transformer-lite | 0.7271 | 0.5133 |
+| Ensemble | 0.7208 | 0.5044 |
+
+Transformer-lite를 자동화 기준 모델로 선택했지만 ROC-AUC가 0.5 근처라 강한 예측력을 입증한 것은 아니다. 앙상블 역시 같은 평가 subset의 항상 상승 baseline보다 개선되지 않았다. 목표에 맞춰 모델 연구를 더 늘리기보다 학습·평가·버전·예측 제공을 연결하는 데 집중했다.
+
+품질 검사 뒤 일별 학습·예측을 실행하고 산출물과 지표를 서버2·PostgreSQL에 기록해 API와 Electron으로 제공하도록 연결했다.
+
+> [사진 삽입: Electron 예측 확대 차트 — 기준일, 상승 점수, 판정 기준과 방향 시나리오가 보이도록 캡처]
+
+상승 점수가 50% 미만이어도 모델 threshold를 넘으면 상승 판정일 수 있다. 화면도 같은 기준을 사용해야 한다. 예측 연장선은 방향·최근 변동성으로 구성한 시나리오이며 미래 종가를 직접 예측한 회귀 결과나 통계적 신뢰구간이 아니다.
+
+2026-11-13에는 현재 Airflow 이미지의 `torch`·`xgboost` 누락을 확인했다. 과거 학습 완료와 현재 자동 실행 정상 여부는 별개이므로 의존성 복구 후 정기 실행 재검증이 필요하다.
+
+## Phase 9. S3
+
+### 비용과 범위
+
+처음에는 S3와 RDS Multi-AZ로 전체 이전하려 했지만, 작은 DB에도 상시 컴퓨팅 비용이 발생했다. 2026-11-13 조회한 구성에서는 RDS 컴퓨팅·최소 저장 비용만 약 $42.47/월이었고 부가 비용은 별도였다.
+
+현재는 **서버1·서버2 유지 + S3 외부 복제**를 선택했다. RDS·Multi-AZ와 연결용 EC2/VPN은 생성하지 않았다. Multi-AZ는 가용성을 위한 DB 복제이지 백업 자체가 아니라는 점도 구분했다.
+
+### 복제와 검증
+
+서울 S3 bucket에 공개 차단, SSE-S3 암호화, Versioning을 적용했다. 서버2의 `raw / curated / processed / models / reports`를 같은 key 구조로 복제했다.
+
+| 항목 | 2026-11-13 결과 |
 | --- | --- |
-| `assets` | 심볼, 시장, 거래소, 자산 유형, 모델링 티어 관리 |
-| `pipeline_runs` | 파이프라인명, 시작·종료 시각, 상태, 메시지 기록 |
-| `datasets` | 데이터 유형, provider, symbol, URI, 행 수, 날짜 범위 기록 |
-| `model_versions` | 모델명, 버전, artifact URI, 학습·검증 행 수 기록 |
-| `model_metrics` | 모델 버전별 평가 지표 기록 |
+| Object 수 | 1,054개 |
+| 데이터 크기 | 486,361,388 bytes |
+| 검증 | 재다운로드 후 SHA256 전체 비교, 차이 없음 |
 
-`model_versions`와 `model_metrics`는 스키마·저장 코드만 준비했다. 자동 수집에서는 아직 레코드를 만들지 않는다.
+사람용 CLI 임시 로그인과 자동 복제 인증도 분리했다. 자동화 전용 IAM 사용자에는 지정 bucket과 다섯 prefix의 조회·쓰기만 허용하고, 삭제·IAM 관리·다른 bucket 접근은 허용하지 않았다. credential은 Git 밖 전용 파일로 관리하고 컨테이너에는 read-only로 연결했다.
 
-### 7. 종목별 실패 격리
+품질 성공 후 예측과 별도 분기로 S3 복제를 실행하도록 연결했다. 변경된 파일만 업로드하되 변경 없음으로 판단한 파일도 다시 읽어 SHA256을 확인한다. 복제 태스크끼리는 pool slot 1개로 직렬화했다.
 
-종목별 예외를 수집했다. 일부 종목이 실패해도 정상 결과는 저장하고 `partial_success`로 기록한다. 첫 오류에서 중단하려면 `--fail-fast`를 사용한다.
+> [사진 삽입: S3 콘솔 — 다섯 prefix와 대표 object가 보이는 목록. 필요하면 Versioning·공개 차단 설정 화면 추가]
 
-### Phase 1 실행 결과
+컨테이너 수동 실행은 검증했지만 이후 정기 KR/US 태스크의 첫 성공은 추가 확인이 필요하다. 매번 파일 읽기·요청·다운로드가 발생하고 Versioning으로 이전 사본도 쌓이므로 저장 용량만으로 비용을 판단하면 안 된다.
 
-| 지표 | 결과 |
-| --- | ---: |
-| 등록 자산 | 29개 |
-| Raw 파일 영역 | 약 21 MB |
-| Processed 피처 영역 | 약 64 MB |
-| `assets` | 29 rows |
-| `pipeline_runs` | 34 rows |
-| 성공한 Pipeline Run | 34건 |
-| `datasets` | 712 rows |
+현재 S3 복제에는 PostgreSQL dump가 포함되지 않는다. 서버2 주간 백업은 유지하고 DB dump 외부 보관·버전 복원·보존 정책은 후속 과제로 남겼다.
 
-## Phase 2. Airflow 자동화 구현
+## 배운 점
 
-### 목표
-
-기존 ETL에 날짜 범위와 시장을 전달하는 Airflow DAG를 만들었다. 시장별 시간대, 미실행 기간, 과거 데이터 정정을 처리했다.
-
-### 1. Docker Compose 실행 환경
-
-Server 1에서 다음 컨테이너 3개를 실행한다.
-
-| 서비스 | 역할 |
+| 문제 | 배운 점·대응 |
 | --- | --- |
-| `airflow-webserver` | Airflow UI와 상태 확인 |
-| `airflow-scheduler` | DAG 스케줄 계산과 Task 실행 |
-| `airflow-postgres` | Airflow 내부 메타데이터 저장 |
+| Docker socket 권한 오류 | Compose 파일과 daemon 접근 권한은 별개. 그룹 변경 후 세션 갱신 필요 |
+| 컨테이너의 SSH 접근 실패 | UID·파일 권한·키 경로를 각각 확인 |
+| 서버 중단과 누락 | 스케줄 복구와 실제 데이터 복구를 구분 |
+| 원천 데이터 이상 | raw 보존, 교차 검증, curated 분리 |
+| 성공 화면과 실제 실패 불일치 | 데이터·품질·예측·실행 이력을 별도 상태로 표시 |
+| AWS 상시 비용 | 전체 이전 대신 필요한 서비스만 도입 |
 
-`airflow-init`가 DB Migration과 관리자 생성을 마친다. PostgreSQL Health Check까지 통과하면 Webserver와 Scheduler를 시작한다.
+데이터 엔지니어 관점에서는 멱등 병합·품질·재처리와 산출물 추적을, 인프라 관점에서는 서비스 경계·권한·영속성·복원·비용을 함께 다룰 수 있었다.
 
-| 항목 | 설정 |
-| --- | --- |
-| Airflow | 2.10.5, Python 3.10 |
-| Executor | LocalExecutor |
-| 기본 시간대 | Asia/Seoul |
-| 예제 DAG | 비활성화 |
-| 새 DAG 기본 Pause | 비활성화 |
-| 재시작 정책 | `unless-stopped` |
-| Web UI | 호스트 8081 → 컨테이너 8080 |
+## 다음 단계
 
-소스·DAG·로그·환경 설정·SSH 키를 볼륨으로 연결했다. 재부팅 시 systemd와 Docker의 `unless-stopped` 정책으로 서비스를 다시 띄운다.
+우선 모델 실행 이미지 의존성을 복구하고 S3 정기 복제를 관찰할 예정이다. 이후 필요한 때만 SageMaker Training Job을 실행해 S3 입력·모델 산출물·CloudWatch 로그와 비용을 확인하려 한다.
 
-### 2. 시장별 DAG 분리
-
-| DAG | Schedule | Timezone | Task |
-| --- | --- | --- | --- |
-| `daily_kr_market_data_etl` | 평일 16:10 | Asia/Seoul | `collect_kr_daily_ohlcv` |
-| `daily_us_market_data_etl` | 평일 17:30 | America/New_York | `collect_us_daily_ohlcv` |
-
-시장별 Timezone으로 장 마감과 일광절약시간을 처리했다. `BashOperator`가 같은 ETL에 `--market KR` 또는 `--market US`를 전달한다.
-
-### 3. Catchup으로 누락 실행 복구
-
-두 DAG에 `catchup=True`를 설정했다. Scheduler 재시작 시 누락된 Data Interval의 Run을 만든다.
-
-`max_active_runs=1`로 동시 실행을 제한했다. CPU 2코어·메모리 약 8 GB에서 자원 경합을 줄이기 위해서다.
-
-### 4. 10일 Overlap 수집
-
-Data Interval 종료일 기준 최근 10일을 재수집한다.
-
-```text
-start = market timezone 기준 data_interval_end - 10일
-end   = market timezone 기준 data_interval_end + 1일
-```
-
-새 데이터와 기존 파일을 병합하고 날짜별 마지막 행을 남긴다. 누락분과 제공자의 정정값을 반영한다.
-
-| 기능 | 역할 |
-| --- | --- |
-| Airflow Catchup | 미실행 날짜의 Run 복구 |
-| 10일 Overlap | 최근 데이터의 누락·정정 반영 |
-| 날짜 기준 병합·중복 제거 | 반복 실행 시 중복 방지 |
-
-### 5. 재시도와 동시 실행 제어
-
-실패 시 최대 3회 재시도하고 20분 간격을 둔다. 일시적인 네트워크·제공자 오류에 재시도한다.
-
-| 항목 | 값 |
-| --- | --- |
-| `retries` | 3 |
-| `retry_delay` | 20분 |
-| `depends_on_past` | false |
-| `max_active_runs` | 1 |
-
-`depends_on_past=False`로 이전 실행의 실패가 다음 실행을 막지 않게 했다. 오류는 Airflow 로그와 `pipeline_runs`에서 확인한다.
-
-### 6. 컨테이너와 원격 저장소 연결
-
-접속 설정은 읽기 전용 환경 파일로 전달한다. 파일 저장은 SSH 공개키 인증, 메타데이터 기록은 PostgreSQL 5432 포트를 사용한다.
-
-```text
-Airflow Scheduler container
-  -> Python ETL process
-  -> yfinance market data
-  -> SSH -> Server 2 file storage
-  -> PostgreSQL -> Server 2 metadata DB
-```
-
-### Phase 2 운영 상태
-
-| 항목 | 상태 |
-| --- | --- |
-| Airflow Webserver | Healthy |
-| Airflow Scheduler | Running |
-| Airflow Metadata PostgreSQL | Healthy |
-| 한국장 DAG | 운영 중 |
-| 미국장 DAG | 운영 중 |
-| 컨테이너 자동 재시작 | 적용 |
-| ETL Pipeline Run | 34건 모두 success |
-
-Phase 2는 운영 검증 중이다. 네트워크 단절·Server 2 중단·강제 Task 실패에 대한 복구 시험은 남아 있다.
-
-## 구현 과정에서 해결한 문제
-
-| 문제 | 조치 |
-| --- | --- |
-| Airflow 상태와 프로젝트 메타데이터의 역할 혼재 | DB를 분리해 Airflow 재구성 시 프로젝트 기록 보존 |
-| 서버 중단으로 인한 미실행 | Catchup으로 Run 복구, Overlap으로 데이터 재확인 |
-| 재실행 시 중복 행 발생 | 날짜별 마지막 행만 유지 |
-| 일부 종목 수집 실패 | 정상 결과 저장, `partial_success`로 기록 |
-
-## 다음 구현: Phase 3
-
-다음 단계는 Electron 대시보드 Mock 화면이다.
-
-- 전체·시장별 관리 자산 수
-- 최신 데이터 기준일과 수집 상태
-- 상승·하락·거래량 급증·고변동성 자산
-- 종목별 가격, 거래량, 이동평균과 이벤트
-- Airflow DAG 최근 실행 상태
-- Server 2와 PostgreSQL 연결 상태
-- 이후 추가할 예측 결과와 AI 리포트의 Placeholder
-
-Mock JSON을 FastAPI 응답 계약의 초안으로 쓸 계획이다. Electron은 DB·파일에 직접 연결하지 않고 FastAPI만 호출할 계획이다.
-
-## 현재 한계
-
-- yfinance 데이터의 교차 검증이 필요하다.
-- 저장 규모와 조회 패턴이 커지면 CSV에서 Parquet으로 전환을 검토한다.
-- SSH 마운트를 호스트 전체 디렉터리에서 서비스 전용 키로 줄여야 한다.
-- Server 2 DB 포트의 방화벽 허용 대상을 제한해야 한다.
-- 자동 백업은 디렉터리 설계 단계다. 실제 복원 훈련은 아직 하지 않았다.
-- 강제 실패·네트워크 단절·DB 중단의 재시도·복구 시험이 남아 있다.
-- 실행 가능한 자동 테스트가 없다. 병합·중복 제거·피처 계산·저장소 테스트가 필요하다.
-- 모델 스키마·저장 코드는 준비했지만 학습 자동화는 미구현이다.
-- AWS·RAG·FastAPI·Electron은 계획 단계다.
-
-## 요약
-
-시장 데이터를 반복 수집·병합·저장하는 파이프라인을 만들었다.
-
-```text
-yfinance OHLCV 수집
-  -> 기존 이력과 날짜 기준 병합
-  -> 중복 제거
-  -> Server 2 raw 저장
-  -> 피처 생성
-  -> Server 2 processed 저장
-  -> PostgreSQL 실행·데이터셋 메타데이터 기록
-  -> Airflow 시장별 스케줄 및 실패 재시도
-```
-
-독립 ETL을 만들고 Airflow로 자동화했다. 이후 단계는 구현·검증이 끝날 때 갱신한다.
+RAG·외부 요인 분석과 Lambda 웹 전환, RDS·Multi-AZ 상시 운영은 보류한다. 지금은 기능 수를 늘리기보다 구현한 흐름이 실제로 반복 실행되고 복구 가능한지 증거를 남기는 데 집중한다.
 
 ---
 
-마지막 확인일: 2026-08-15
+마지막 정리일: 2026-11-13
