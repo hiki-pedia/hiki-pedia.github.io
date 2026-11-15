@@ -1,5 +1,5 @@
 ---
-title: "Minecraft를 이용한 grafana, Kubernetes 실습."
+title: "Minecraft를 이용한 grafana, Kubernetes 실습(1)."
 excerpt: "지형 로딩 문제의 측정부터 사전 생성, 부하 시험, 공개 운영, 백업과 Discord 장애 알림까지 구축한 기록"
 categories:
   - projects

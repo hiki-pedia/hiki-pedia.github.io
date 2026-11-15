@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="760" viewBox="0 0 1040 760" role="img" aria-labelledby="title desc">
+<title id="title">현재 운영 · Docker Compose</title><desc id="desc">플레이어는 서버1 Nginx를 거쳐 서버2 Paper에 접속한다. 서버1은 서버2 지표를 수집하고 백업 사본을 보관한다.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker></defs>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR','Apple SD Gothic Neo',sans-serif;fill:#243247}.title{font-size:30px;font-weight:700}.section{font-size:22px;font-weight:700}.body{font-size:20px}.small{font-size:18px;fill:#52647b}.edge{fill:none;stroke:#64748b;stroke-width:2.5;marker-end:url(#arrow)}</style>
+<rect width="1040" height="760" rx="20" fill="#f8fafc"/>
+<text x="40" y="52" class="title">현재 운영 · Docker Compose</text>
+<text x="40" y="86" class="small">실제 운영 구성 · 공개 게임 접속과 관리 경로 분리</text>
+<rect x="40" y="115" width="450" height="95" rx="12" fill="#eaf2ff" stroke="#a4bee8" stroke-width="2"/>
+<text x="60" y="149" class="section">플레이어 → 공유기</text>
+<text x="60" y="181" class="body">공개 TCP 25565 포트포워딩</text>
+<rect x="40" y="255" width="450" height="350" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="60" y="289" class="section">서버1 · 접속 / 모니터링</text>
+<rect x="65" y="315" width="400" height="78" rx="12" fill="#eff6ff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="85" y="349" class="section">Nginx TCP 프록시</text>
+<rect x="65" y="422" width="400" height="82" rx="12" fill="#ecfdf5" stroke="#a7d9bf" stroke-width="2"/>
+<text x="85" y="456" class="section">Prometheus → Grafana</text>
+<text x="85" y="488" class="body">호스트·게임 지표 → Discord 알림</text>
+<rect x="65" y="529" width="400" height="54" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+<text x="85" y="563" class="section">검증된 백업 사본</text>
+<rect x="550" y="255" width="450" height="350" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="570" y="289" class="section">서버2 · 게임 / 데이터</text>
+<rect x="575" y="315" width="400" height="78" rx="12" fill="#eff6ff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="595" y="349" class="section">Paper · Java · CalmlandMap</text>
+<text x="595" y="381" class="body">운영 월드·플레이어 데이터: SSD</text>
+<rect x="575" y="422" width="400" height="82" rx="12" fill="#ecfdf5" stroke="#a7d9bf" stroke-width="2"/>
+<text x="595" y="456" class="section">Node / Minecraft Exporter</text>
+<text x="595" y="488" class="body">호스트 자원·게임 지표 제공</text>
+<rect x="575" y="529" width="400" height="54" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+<text x="595" y="563" class="section">콜드 백업 · HDD</text>
+<path d="M265 210 V315" class="edge"/>
+<path d="M465 354 H575" class="edge"/>
+<text x="505" y="329" class="small">게임</text>
+<path d="M575 465 H465" class="edge"/>
+<text x="502" y="447" class="small">수집</text>
+<path d="M575 558 H465" class="edge"/>
+<text x="493" y="592" class="small">매시간 복제</text>
+<rect x="550" y="115" width="450" height="95" rx="12" fill="#fff7ed" stroke="#e6c299" stroke-width="2"/>
+<text x="570" y="149" class="section">관리자 PC</text>
+<text x="570" y="181" class="body">WireGuard · SSH 터널</text>
+<path d="M775 210 V232 H510 V463 H465" class="edge"/>
+<text x="40" y="650" class="body">백업: 매일 05:00 정상 종료 → 생성·검증 → 서버1 복제</text>
+<text x="40" y="689" class="body">관리: Grafana·서버 관리는 공개 게임 접속과 별도 경로</text>
+<text x="40" y="724" class="small">두 호스트는 같은 집에 있으며 외부 장소 백업은 별도 과제다.</text>
+</svg>

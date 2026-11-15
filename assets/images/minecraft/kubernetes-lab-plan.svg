@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="970" viewBox="0 0 1040 970" role="img" aria-labelledby="title desc">
+<title id="title">시험 계획 · Kubernetes 단일 노드</title><desc id="desc">기존 Compose 운영은 유지하고 서버2에 별도의 Kubernetes 시험 클러스터를 추가하는 설계안이다. 시험 데이터는 PVC와 PV에 연결하고 운영 월드와 공유하지 않는다.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker></defs>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR','Apple SD Gothic Neo',sans-serif;fill:#243247}.title{font-size:30px;font-weight:700}.section{font-size:22px;font-weight:700}.body{font-size:20px}.small{font-size:18px;fill:#52647b}.edge{fill:none;stroke:#64748b;stroke-width:2.5;marker-end:url(#arrow)}</style>
+<rect width="1040" height="970" rx="20" fill="#f8fafc"/>
+<text x="40" y="52" class="title">시험 계획 · Kubernetes 단일 노드</text>
+<text x="40" y="86" class="small">구축 전 설계안 · 배포판·저장소·접속 방식은 사전 점검 후 선정</text>
+<rect x="40" y="115" width="960" height="95" rx="12" fill="#eaf2ff" stroke="#a4bee8" stroke-width="2"/>
+<text x="60" y="149" class="section">기존 운영 유지</text>
+<text x="60" y="181" class="body">플레이어 → 기존 Nginx → Compose Paper → 운영 SSD·백업</text>
+<rect x="40" y="245" width="330" height="100" rx="12" fill="#fff7ed" stroke="#e6c299" stroke-width="2"/>
+<text x="60" y="279" class="section">관리자 PC</text>
+<text x="60" y="311" class="body">SSH 비공개 접속 · kubectl</text>
+<rect x="40" y="400" width="330" height="150" rx="12" fill="#ecfdf5" stroke="#a7d9bf" stroke-width="2"/>
+<text x="60" y="434" class="section">서버1 · 기존 모니터링</text>
+<text x="60" y="466" class="body">Prometheus → Grafana</text>
+<text x="60" y="495" class="body">시험 지표를 추가 연결</text>
+<rect x="420" y="245" width="580" height="600" rx="14" fill="#fffbeb" stroke="#c89d38" stroke-width="2" stroke-dasharray="9 6"/>
+<text x="442" y="280" class="section">서버2 · Kubernetes 시험 클러스터</text>
+<text x="442" y="314" class="small">Control Plane · 노드 에이전트 · 런타임</text>
+<rect x="442" y="340" width="536" height="78" rx="12" fill="#fff" stroke="#d8c690" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="462" y="374" class="section">Namespace: calmland-lab</text>
+<rect x="468" y="450" width="484" height="95" rx="12" fill="#fff" stroke="#d8c690" stroke-width="2"/>
+<text x="488" y="484" class="section">Service → Paper Pod 1개</text>
+<text x="488" y="516" class="body">공개 게임 경로와 별도 시험 접속</text>
+<rect x="468" y="575" width="484" height="95" rx="12" fill="#fff" stroke="#d8c690" stroke-width="2"/>
+<text x="488" y="609" class="section">ConfigMap · Secret</text>
+<text x="488" y="641" class="body">게임 설정과 필요한 인증 정보 분리</text>
+<rect x="468" y="700" width="484" height="100" rx="12" fill="#fff" stroke="#d8c690" stroke-width="2"/>
+<text x="488" y="734" class="section">PVC → PV → 시험 저장소</text>
+<text x="488" y="766" class="body">운영 월드와 다른 데이터 경로</text>
+<path d="M370 294 H398 V497 H468" class="edge"/>
+<path d="M710 418 V450" class="edge"/>
+<path d="M710 575 V545" class="edge"/>
+<path d="M950 545 V685 H710 V700" class="edge"/>
+<path d="M468 525 H400 V475 H370" class="edge"/>
+<text x="40" y="895" class="section">운영·시험: 저장 경로 / 포트 / 설정 분리</text>
+<text x="40" y="932" class="small">단일 노드 시험이며 고가용성이나 노드 간 자동 이전을 검증하는 구성은 아니다.</text>
+</svg>
