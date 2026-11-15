@@ -1,0 +1,1128 @@
+{
+  "date": "2026-11-04/05",
+  "scope": "isolated offline backend, fixed maximum health, controlled walking",
+  "fixture_sha256": "f4b2c7c23f8f6e5b9d2bf727d4b91615e3a53fa73dac3bb541394a2de405610f",
+  "cpu_limit_cores": 3,
+  "memory_limit_mib": 3072,
+  "cases": [
+    {
+      "run": "run-20261104-221107",
+      "case": "n5_A",
+      "phase": "n5_A_measure",
+      "status": "completed",
+      "pet_preparation": "at_case_destination",
+      "metrics": {
+        "ticks": 6001,
+        "elapsed_seconds": 300.003115532,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 19.999792300023653,
+        "mean_mspt": 10.880453577903683,
+        "p50_mspt": 10.753399,
+        "p95_mspt": 14.543119,
+        "p99_mspt": 20.876541,
+        "max_mspt": 90.569085,
+        "over_ms_ratio": {
+          "50": 0.0008331944675887352,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 0.0,
+          "Capacity02": 0.0,
+          "Capacity03": 0.0,
+          "Capacity04": 0.0,
+          "Capacity05": 0.0
+        },
+        "minimum_players": 5,
+        "maximum_players": 5,
+        "damage_prevented_events": 272,
+        "actor_protection": {
+          "epoch_ms": 1793799034529,
+          "mono_ns": 990334062424569,
+          "kind": "phase_stats",
+          "phase": "n5_A_measure",
+          "player_damage_prevented": 272,
+          "pet_damage_prevented": 0,
+          "explosion_blocks_prevented": 0
+        },
+        "resources": {
+          "samples": 300,
+          "raw_memory_peak_mib": 1142.3046875,
+          "working_set_peak_mib": 1136.87109375,
+          "cpu_mean_one_core_percent": 42.86693626643795,
+          "cpu_peak_one_core_percent": 187.3586146498848,
+          "cpu_mean_quota_percent": 14.288978755479318,
+          "throttled_periods": 3,
+          "periods": 2990,
+          "throttled_usec_delta": 145999,
+          "host_available_min_gib": 5.441314697265625,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 13,
+              "accumulated_seconds_delta": 0.525493178
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 8,
+              "accumulated_seconds_delta": 0.047189492
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261104-221107",
+      "case": "n5_B",
+      "phase": "n5_B_measure",
+      "status": "completed",
+      "pet_preparation": "at_case_destination",
+      "metrics": {
+        "ticks": 9600,
+        "elapsed_seconds": 479.951281126,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 19.999946614331478,
+        "mean_mspt": 11.0657171840625,
+        "p50_mspt": 10.90935,
+        "p95_mspt": 15.715878,
+        "p99_mspt": 20.930363,
+        "max_mspt": 58.815855,
+        "over_ms_ratio": {
+          "50": 0.0011458333333333333,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 471.5256371819881,
+          "Capacity02": 475.042398337789,
+          "Capacity03": 477.23515426815254,
+          "Capacity04": 476.7228935087112,
+          "Capacity05": 473.7379175306294
+        },
+        "minimum_players": 5,
+        "maximum_players": 5,
+        "damage_prevented_events": 260,
+        "actor_protection": {
+          "epoch_ms": 1793799764798,
+          "mono_ns": 991064331856898,
+          "kind": "phase_stats",
+          "phase": "n5_B_measure",
+          "player_damage_prevented": 257,
+          "pet_damage_prevented": 3,
+          "explosion_blocks_prevented": 76
+        },
+        "resources": {
+          "samples": 480,
+          "raw_memory_peak_mib": 1017.13671875,
+          "working_set_peak_mib": 1003.6328125,
+          "cpu_mean_one_core_percent": 50.58906508096618,
+          "cpu_peak_one_core_percent": 168.21537031402477,
+          "cpu_mean_quota_percent": 16.863021693655394,
+          "throttled_periods": 2,
+          "periods": 4790,
+          "throttled_usec_delta": 10735,
+          "host_available_min_gib": 5.559780120849609,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 39,
+              "accumulated_seconds_delta": 1.179857091
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 26,
+              "accumulated_seconds_delta": 0.083740124
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261104-221107",
+      "case": "n5_C",
+      "phase": "n5_C_measure",
+      "status": "completed",
+      "pet_preparation": "at_case_destination",
+      "metrics": {
+        "ticks": 12000,
+        "elapsed_seconds": 599.938516339,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 20.00038282792944,
+        "mean_mspt": 21.902273493666666,
+        "p50_mspt": 20.726002,
+        "p95_mspt": 32.293012,
+        "p99_mspt": 37.461096,
+        "max_mspt": 73.319384,
+        "over_ms_ratio": {
+          "50": 0.0021666666666666666,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 595.5066184532003,
+          "Capacity02": 641.6191725036359,
+          "Capacity03": 615.7460666623704,
+          "Capacity04": 619.4501234481185,
+          "Capacity05": 647.1258123802775
+        },
+        "minimum_players": 5,
+        "maximum_players": 5,
+        "damage_prevented_events": 7018,
+        "actor_protection": {
+          "epoch_ms": 1793800625120,
+          "mono_ns": 991924654105929,
+          "kind": "phase_stats",
+          "phase": "n5_C_measure",
+          "player_damage_prevented": 6996,
+          "pet_damage_prevented": 22,
+          "explosion_blocks_prevented": 626
+        },
+        "resources": {
+          "samples": 600,
+          "raw_memory_peak_mib": 1415.703125,
+          "working_set_peak_mib": 1410.46484375,
+          "cpu_mean_one_core_percent": 64.39260268022439,
+          "cpu_peak_one_core_percent": 295.5793006520651,
+          "cpu_mean_quota_percent": 21.46420089340813,
+          "throttled_periods": 13,
+          "periods": 5990,
+          "throttled_usec_delta": 724619,
+          "host_available_min_gib": 5.1786651611328125,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 68,
+              "accumulated_seconds_delta": 1.750409082
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 44,
+              "accumulated_seconds_delta": 0.193180176
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261104-221107",
+      "case": "n10_A",
+      "phase": "n10_A_measure",
+      "status": "completed",
+      "pet_preparation": "at_case_destination",
+      "metrics": {
+        "ticks": 6000,
+        "elapsed_seconds": 299.952751284,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 19.99981655217442,
+        "mean_mspt": 14.543134251333333,
+        "p50_mspt": 14.770558,
+        "p95_mspt": 18.697968,
+        "p99_mspt": 28.737067,
+        "max_mspt": 68.720138,
+        "over_ms_ratio": {
+          "50": 0.0028333333333333335,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05",
+          "Capacity06",
+          "Capacity07",
+          "Capacity08",
+          "Capacity09",
+          "Capacity10"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 0.0,
+          "Capacity02": 0.0,
+          "Capacity03": 0.0,
+          "Capacity04": 0.0,
+          "Capacity05": 0.0,
+          "Capacity06": 0.0,
+          "Capacity07": 0.0,
+          "Capacity08": 0.0,
+          "Capacity09": 0.0,
+          "Capacity10": 0.0
+        },
+        "minimum_players": 10,
+        "maximum_players": 10,
+        "damage_prevented_events": 522,
+        "actor_protection": {
+          "epoch_ms": 1793801161367,
+          "mono_ns": 992460900251397,
+          "kind": "phase_stats",
+          "phase": "n10_A_measure",
+          "player_damage_prevented": 522,
+          "pet_damage_prevented": 0,
+          "explosion_blocks_prevented": 0
+        },
+        "resources": {
+          "samples": 300,
+          "raw_memory_peak_mib": 1028.171875,
+          "working_set_peak_mib": 1012.71484375,
+          "cpu_mean_one_core_percent": 62.167286245361844,
+          "cpu_peak_one_core_percent": 188.1631963609514,
+          "cpu_mean_quota_percent": 20.722428748453947,
+          "throttled_periods": 2,
+          "periods": 2990,
+          "throttled_usec_delta": 98711,
+          "host_available_min_gib": 5.554351806640625,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 27,
+              "accumulated_seconds_delta": 0.990287735
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 18,
+              "accumulated_seconds_delta": 0.074930748
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261104-221107",
+      "case": "n10_B",
+      "phase": "n10_B_measure",
+      "status": "completed",
+      "pet_preparation": "at_case_destination",
+      "metrics": {
+        "ticks": 9600,
+        "elapsed_seconds": 479.939189853,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 20.00045047986197,
+        "mean_mspt": 16.547028860729167,
+        "p50_mspt": 16.155142,
+        "p95_mspt": 22.914777,
+        "p99_mspt": 32.914105,
+        "max_mspt": 81.076396,
+        "over_ms_ratio": {
+          "50": 0.0038541666666666668,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05",
+          "Capacity06",
+          "Capacity07",
+          "Capacity08",
+          "Capacity09",
+          "Capacity10"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 472.88998801606715,
+          "Capacity02": 476.7661228355375,
+          "Capacity03": 473.5972983758708,
+          "Capacity04": 475.27371594300115,
+          "Capacity05": 474.1705198402067,
+          "Capacity06": 475.0926846968041,
+          "Capacity07": 476.61109889117023,
+          "Capacity08": 472.07323116088935,
+          "Capacity09": 477.2657270029797,
+          "Capacity10": 474.1694097770567
+        },
+        "minimum_players": 10,
+        "maximum_players": 10,
+        "damage_prevented_events": 806,
+        "actor_protection": {
+          "epoch_ms": 1793801927245,
+          "mono_ns": 993226778799452,
+          "kind": "phase_stats",
+          "phase": "n10_B_measure",
+          "player_damage_prevented": 806,
+          "pet_damage_prevented": 0,
+          "explosion_blocks_prevented": 0
+        },
+        "resources": {
+          "samples": 480,
+          "raw_memory_peak_mib": 1051.91015625,
+          "working_set_peak_mib": 1047.15625,
+          "cpu_mean_one_core_percent": 87.24191639248448,
+          "cpu_peak_one_core_percent": 211.8441038888387,
+          "cpu_mean_quota_percent": 29.080638797494828,
+          "throttled_periods": 2,
+          "periods": 4790,
+          "throttled_usec_delta": 21043,
+          "host_available_min_gib": 5.5359344482421875,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 57,
+              "accumulated_seconds_delta": 1.961691878
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 38,
+              "accumulated_seconds_delta": 0.11671293
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261104-221107",
+      "case": "n10_C",
+      "phase": "n10_C_measure",
+      "status": "completed",
+      "pet_preparation": "at_case_destination",
+      "metrics": {
+        "ticks": 12000,
+        "elapsed_seconds": 599.963629988,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 19.99954563952484,
+        "mean_mspt": 26.039875926333334,
+        "p50_mspt": 23.933936,
+        "p95_mspt": 41.216595,
+        "p99_mspt": 49.173538,
+        "max_mspt": 96.112026,
+        "over_ms_ratio": {
+          "50": 0.008666666666666666,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05",
+          "Capacity06",
+          "Capacity07",
+          "Capacity08",
+          "Capacity09",
+          "Capacity10"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 594.9356038084283,
+          "Capacity02": 599.9352965975164,
+          "Capacity03": 645.3150087945116,
+          "Capacity04": 595.5441968534321,
+          "Capacity05": 616.4066080452353,
+          "Capacity06": 620.3141206800358,
+          "Capacity07": 624.2871448573195,
+          "Capacity08": 588.963024685929,
+          "Capacity09": 645.3154807055765,
+          "Capacity10": 586.9703826044117
+        },
+        "minimum_players": 10,
+        "maximum_players": 10,
+        "damage_prevented_events": 11947,
+        "actor_protection": {
+          "epoch_ms": 1793802824863,
+          "mono_ns": 994124396233082,
+          "kind": "phase_stats",
+          "phase": "n10_C_measure",
+          "player_damage_prevented": 11623,
+          "pet_damage_prevented": 324,
+          "explosion_blocks_prevented": 1840
+        },
+        "resources": {
+          "samples": 600,
+          "raw_memory_peak_mib": 1959.6171875,
+          "working_set_peak_mib": 1952.6484375,
+          "cpu_mean_one_core_percent": 76.09355853512001,
+          "cpu_peak_one_core_percent": 301.06305665664127,
+          "cpu_mean_quota_percent": 25.36451951170667,
+          "throttled_periods": 32,
+          "periods": 5990,
+          "throttled_usec_delta": 2018857,
+          "host_available_min_gib": 4.6286468505859375,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 73,
+              "accumulated_seconds_delta": 2.112709189
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 50,
+              "accumulated_seconds_delta": 0.242515916
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261104-221107",
+      "case": "n15_A",
+      "phase": "n15_A_measure",
+      "status": "completed",
+      "pet_preparation": "at_case_destination",
+      "metrics": {
+        "ticks": 6000,
+        "elapsed_seconds": 299.957024641,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 19.99953162350451,
+        "mean_mspt": 19.578331453833332,
+        "p50_mspt": 20.234635,
+        "p95_mspt": 25.892201,
+        "p99_mspt": 35.419726,
+        "max_mspt": 91.964634,
+        "over_ms_ratio": {
+          "50": 0.0045,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05",
+          "Capacity06",
+          "Capacity07",
+          "Capacity08",
+          "Capacity09",
+          "Capacity10",
+          "Capacity11",
+          "Capacity12",
+          "Capacity13",
+          "Capacity14",
+          "Capacity15"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 0.0,
+          "Capacity02": 0.0,
+          "Capacity03": 0.0,
+          "Capacity04": 0.0,
+          "Capacity05": 0.0,
+          "Capacity06": 0.0,
+          "Capacity07": 0.0,
+          "Capacity08": 0.0,
+          "Capacity09": 0.0,
+          "Capacity10": 0.0,
+          "Capacity11": 0.0,
+          "Capacity12": 0.0,
+          "Capacity13": 0.0,
+          "Capacity14": 0.0,
+          "Capacity15": 0.0
+        },
+        "minimum_players": 15,
+        "maximum_players": 15,
+        "damage_prevented_events": 115,
+        "actor_protection": {
+          "epoch_ms": 1793803397464,
+          "mono_ns": 994696997968850,
+          "kind": "phase_stats",
+          "phase": "n15_A_measure",
+          "player_damage_prevented": 115,
+          "pet_damage_prevented": 0,
+          "explosion_blocks_prevented": 0
+        },
+        "resources": {
+          "samples": 300,
+          "raw_memory_peak_mib": 1035.9453125,
+          "working_set_peak_mib": 1019.39453125,
+          "cpu_mean_one_core_percent": 84.53686299439343,
+          "cpu_peak_one_core_percent": 196.4146583764099,
+          "cpu_mean_quota_percent": 28.178954331464478,
+          "throttled_periods": 3,
+          "periods": 2990,
+          "throttled_usec_delta": 105215,
+          "host_available_min_gib": 5.528800964355469,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 36,
+              "accumulated_seconds_delta": 1.283450655
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 24,
+              "accumulated_seconds_delta": 0.083054267
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261104-221107",
+      "case": "n15_B",
+      "phase": "n15_B_measure",
+      "status": "completed",
+      "pet_preparation": "at_case_destination",
+      "metrics": {
+        "ticks": 9600,
+        "elapsed_seconds": 479.949794199,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 20.000008575938672,
+        "mean_mspt": 22.331809538229166,
+        "p50_mspt": 22.307948,
+        "p95_mspt": 30.968984,
+        "p99_mspt": 42.459313,
+        "max_mspt": 81.15845,
+        "over_ms_ratio": {
+          "50": 0.007291666666666667,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05",
+          "Capacity06",
+          "Capacity07",
+          "Capacity08",
+          "Capacity09",
+          "Capacity10",
+          "Capacity11",
+          "Capacity12",
+          "Capacity13",
+          "Capacity14",
+          "Capacity15"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 474.09567344730687,
+          "Capacity02": 473.3466506853033,
+          "Capacity03": 479.08416087138664,
+          "Capacity04": 471.7718892391579,
+          "Capacity05": 475.02974423868466,
+          "Capacity06": 476.4643167779859,
+          "Capacity07": 472.6922171523391,
+          "Capacity08": 477.5991100535472,
+          "Capacity09": 474.15826496052,
+          "Capacity10": 473.5854866443109,
+          "Capacity11": 475.34059878582946,
+          "Capacity12": 473.12804275222743,
+          "Capacity13": 477.2730501164264,
+          "Capacity14": 474.07207115648214,
+          "Capacity15": 473.4706046892271
+        },
+        "minimum_players": 15,
+        "maximum_players": 15,
+        "damage_prevented_events": 502,
+        "actor_protection": {
+          "epoch_ms": 1793804198861,
+          "mono_ns": 995498395156595,
+          "kind": "phase_stats",
+          "phase": "n15_B_measure",
+          "player_damage_prevented": 502,
+          "pet_damage_prevented": 0,
+          "explosion_blocks_prevented": 0
+        },
+        "resources": {
+          "samples": 480,
+          "raw_memory_peak_mib": 1053.85546875,
+          "working_set_peak_mib": 1048.6484375,
+          "cpu_mean_one_core_percent": 130.17329650976362,
+          "cpu_peak_one_core_percent": 193.0632606977791,
+          "cpu_mean_quota_percent": 43.39109883658787,
+          "throttled_periods": 8,
+          "periods": 4790,
+          "throttled_usec_delta": 148059,
+          "host_available_min_gib": 5.484119415283203,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 79,
+              "accumulated_seconds_delta": 2.724775
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 52,
+              "accumulated_seconds_delta": 0.159584914
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261105-015112",
+      "case": "n15_C",
+      "phase": "n15_C_measure",
+      "status": "completed",
+      "pet_preparation": "cluster_before_spread",
+      "metrics": {
+        "ticks": 11979,
+        "elapsed_seconds": 599.940788465,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 19.96530362712417,
+        "mean_mspt": 38.666191532181315,
+        "p50_mspt": 37.618799,
+        "p95_mspt": 45.401553,
+        "p99_mspt": 67.041511,
+        "max_mspt": 176.881263,
+        "over_ms_ratio": {
+          "50": 0.0236246765172385,
+          "100": 0.0003339176892895901,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05",
+          "Capacity06",
+          "Capacity07",
+          "Capacity08",
+          "Capacity09",
+          "Capacity10",
+          "Capacity11",
+          "Capacity12",
+          "Capacity13",
+          "Capacity14",
+          "Capacity15"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 591.2510805679516,
+          "Capacity02": 540.2012298918269,
+          "Capacity03": 574.2156195369265,
+          "Capacity04": 642.0152999058907,
+          "Capacity05": 586.3214347221066,
+          "Capacity06": 597.048548511267,
+          "Capacity07": 618.7187718790684,
+          "Capacity08": 636.5825085136215,
+          "Capacity09": 596.1816467368913,
+          "Capacity10": 618.2846247707189,
+          "Capacity11": 614.2843260580066,
+          "Capacity12": 586.2569070343903,
+          "Capacity13": 649.462236169229,
+          "Capacity14": 603.7235177316104,
+          "Capacity15": 620.1296359527256
+        },
+        "minimum_players": 15,
+        "maximum_players": 15,
+        "damage_prevented_events": 24902,
+        "actor_protection": {
+          "epoch_ms": 1793812105373,
+          "mono_ns": 1003404906506483,
+          "kind": "phase_stats",
+          "phase": "n15_C_measure",
+          "player_damage_prevented": 24760,
+          "pet_damage_prevented": 142,
+          "explosion_blocks_prevented": 3027
+        },
+        "resources": {
+          "samples": 600,
+          "raw_memory_peak_mib": 2266.87890625,
+          "working_set_peak_mib": 2229.9765625,
+          "cpu_mean_one_core_percent": 109.83480459534232,
+          "cpu_peak_one_core_percent": 300.11907354311325,
+          "cpu_mean_quota_percent": 36.61160153178077,
+          "throttled_periods": 66,
+          "periods": 5990,
+          "throttled_usec_delta": 2530596,
+          "host_available_min_gib": 4.388114929199219,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 95,
+              "accumulated_seconds_delta": 3.486881074
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 64,
+              "accumulated_seconds_delta": 0.3108718
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261105-015112",
+      "case": "n20_C",
+      "phase": "n20_C_warm",
+      "status": "stopped_during_warmup",
+      "pet_preparation": "cluster_before_spread",
+      "metrics": {
+        "ticks": 366,
+        "elapsed_seconds": 30.022559968,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 12.157524221420184,
+        "mean_mspt": 83.45710655464481,
+        "p50_mspt": 68.931702,
+        "p95_mspt": 120.842996,
+        "p99_mspt": 566.829236,
+        "max_mspt": 1125.838738,
+        "over_ms_ratio": {
+          "50": 0.8989071038251366,
+          "100": 0.1284153005464481,
+          "500": 0.01366120218579235
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05",
+          "Capacity06",
+          "Capacity07",
+          "Capacity08",
+          "Capacity09",
+          "Capacity10",
+          "Capacity11",
+          "Capacity12",
+          "Capacity13",
+          "Capacity14",
+          "Capacity15",
+          "Capacity16",
+          "Capacity17",
+          "Capacity18",
+          "Capacity19",
+          "Capacity20"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 27.55546533798966,
+          "Capacity02": 23.83311243760594,
+          "Capacity03": 27.96110385418728,
+          "Capacity04": 28.305217934207192,
+          "Capacity05": 27.513179354113166,
+          "Capacity06": 38.872254701639804,
+          "Capacity07": 24.203629342486234,
+          "Capacity08": 23.745584162190855,
+          "Capacity09": 26.00658344249465,
+          "Capacity10": 27.431589725959512,
+          "Capacity11": 28.597373985284687,
+          "Capacity12": 27.910230457173604,
+          "Capacity13": 27.90840071348648,
+          "Capacity14": 28.259087272593288,
+          "Capacity15": 26.291025018053315,
+          "Capacity16": 24.388075312085718,
+          "Capacity17": 28.41691102952274,
+          "Capacity18": 27.053383501015254,
+          "Capacity19": 25.055544103350037,
+          "Capacity20": 20.653731293397836
+        },
+        "minimum_players": 20,
+        "maximum_players": 20,
+        "damage_prevented_events": null,
+        "actor_protection": null,
+        "resources": {
+          "samples": 30,
+          "raw_memory_peak_mib": 2529.49609375,
+          "working_set_peak_mib": 2511.80078125,
+          "cpu_mean_one_core_percent": 226.8732557032419,
+          "cpu_peak_one_core_percent": 300.31378113253464,
+          "cpu_mean_quota_percent": 75.6244185677473,
+          "throttled_periods": 46,
+          "periods": 290,
+          "throttled_usec_delta": 2158261,
+          "host_available_min_gib": 4.122955322265625,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 8,
+              "accumulated_seconds_delta": 0.346805461
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 4,
+              "accumulated_seconds_delta": 0.031175281
+            }
+          }
+        }
+      }
+    },
+    {
+      "run": "run-20261105-021406",
+      "case": "n10_C",
+      "phase": "n10_C_measure",
+      "status": "completed_30_minute_sustained_test",
+      "pet_preparation": "cluster_before_spread",
+      "metrics": {
+        "ticks": 36000,
+        "elapsed_seconds": 1799.945794781,
+        "tick_sequence_contiguous": true,
+        "observed_tps": 20.000046726062667,
+        "mean_mspt": 26.45384759713889,
+        "p50_mspt": 24.824956,
+        "p95_mspt": 41.281766,
+        "p99_mspt": 49.567039,
+        "max_mspt": 85.575806,
+        "over_ms_ratio": {
+          "50": 0.008888888888888889,
+          "100": 0.0,
+          "500": 0.0
+        },
+        "max_dropped_total": 0,
+        "player_names": [
+          "Capacity01",
+          "Capacity02",
+          "Capacity03",
+          "Capacity04",
+          "Capacity05",
+          "Capacity06",
+          "Capacity07",
+          "Capacity08",
+          "Capacity09",
+          "Capacity10"
+        ],
+        "sampled_horizontal_distance": {
+          "Capacity01": 1799.3254858211783,
+          "Capacity02": 1824.6205952467606,
+          "Capacity03": 1938.0380579243824,
+          "Capacity04": 1807.7427682545247,
+          "Capacity05": 1856.450217814906,
+          "Capacity06": 1869.3919243341443,
+          "Capacity07": 1882.2325088912817,
+          "Capacity08": 1784.6964312151754,
+          "Capacity09": 1944.569089964815,
+          "Capacity10": 1760.2354617242545
+        },
+        "minimum_players": 10,
+        "maximum_players": 10,
+        "damage_prevented_events": 36505,
+        "actor_protection": {
+          "epoch_ms": 1793814645029,
+          "mono_ns": 1005944562787926,
+          "kind": "phase_stats",
+          "phase": "n10_C_measure",
+          "player_damage_prevented": 36381,
+          "pet_damage_prevented": 124,
+          "explosion_blocks_prevented": 3977
+        },
+        "resources": {
+          "samples": 1800,
+          "raw_memory_peak_mib": 1863.18359375,
+          "working_set_peak_mib": 1836.95703125,
+          "cpu_mean_one_core_percent": 75.00202478204203,
+          "cpu_peak_one_core_percent": 288.12654957094946,
+          "cpu_mean_quota_percent": 25.000674927347344,
+          "throttled_periods": 14,
+          "periods": 17990,
+          "throttled_usec_delta": 352300,
+          "host_available_min_gib": 4.7582855224609375,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "gc": {
+            "0": {
+              "name": "G1 young collection pauses",
+              "invocations_delta": 263,
+              "accumulated_seconds_delta": 7.043372473
+            },
+            "1": {
+              "name": "G1 full collection pauses",
+              "invocations_delta": 0,
+              "accumulated_seconds_delta": 0.0
+            },
+            "2": {
+              "name": "G1 concurrent cycle pauses",
+              "invocations_delta": 176,
+              "accumulated_seconds_delta": 0.97936583
+            }
+          }
+        }
+      }
+    }
+  ],
+  "verification": {
+    "production_restored": true,
+    "original_unchanged": true,
+    "original_files": 543,
+    "production_filesystem_device": 2050,
+    "test_filesystem_device": 2050,
+    "fixture_archive_sha256": "f4b2c7c23f8f6e5b9d2bf727d4b91615e3a53fa73dac3bb541394a2de405610f",
+    "tool_sha256": {
+      "jvm-perf-sample.py": "a78389b997690dd690853f26d5ffc19be258c62eb331442b99bcb1c99330990e",
+      "compat-check.py": "ddeac6280fb3d995af831a208302ac0f265f6bb5ca0fc97064b122507724914a",
+      "build-probe.py": "0e247ed339444a09db4151fedd33bfbb376f7638e4ccbc1996cd321d84996af6",
+      "run.py": "d4055ce27d2f4ba3d6088ef8372ac6b63c97976bc6ddf518782180436e20be14",
+      "CapacityProbe.jar": "086a631bef7c869c907c60f125e3a393d08fabe763c82ea2ddfc4f1f55cca42b",
+      "report.py": "5dfb46e24892d8a71b84448c4936557a9ee8a2e99abae6be1fac2c6092f81654",
+      "resources.py": "4b809ac041b4990d7f43dc9796862a1ab94f4b057f5e3ec9616bdb6e65893ab6",
+      "remote-session.py": "8659490264d7a8b1c0f017ba39bd0f5ddd6fea048891df82dc37512eef076a76",
+      "summarize.py": "ae237a805241318ccc77f4c149e17a02ca4a8c5dad6e40b38747b49baf163a27",
+      "supervise.py": "b643621c00328c2e56a43114e085e0ba3febe162bc23f0180b2ca122d537ddf1",
+      "terrain-check.py": "f7bb9ca0d273f147dab139bf9cb5ff4dcfebf18d704d0b7ee53c744c2f864ec7"
+    },
+    "production_health": "healthy",
+    "production_restart_policy": "unless-stopped",
+    "production_online_mode": true,
+    "production_max_players": 2,
+    "proxy_lan_status_response": true,
+    "authentication_tested": false,
+    "remaining_client_controllers": [],
+    "test_tunnel_listener_remaining": false
+  },
+  "recommendation": {
+    "initial_public_capacity": 10,
+    "cautious_first_launch_capacity": 5,
+    "production_capacity_changed": false,
+    "limitations": [
+      "controlled offline backend walking workload",
+      "15-player boundary needs further repetition before adopting 15",
+      "20-player spread warmup aborted; steady-state and other 20-player cases unmeasured",
+      "mixed flight/home/block activity, new Nether generation, WAN and authentication excluded"
+    ]
+  }
+}
