@@ -1,5 +1,5 @@
 ---
-title: "Minecraft 서버 운영 (2): Kubernetes 실습 계획"
+title: "Minecraft 서버 운영 (2) : Kubernetes 실습"
 excerpt: "Compose 운영을 유지하면서 Kubernetes 시험 환경에서 배포·영속 저장소·복구를 검증하는 계획"
 categories:
   - projects
@@ -18,9 +18,11 @@ author_profile: false
 sidebar:
   nav: "docs"
 published: true
-project_group: personal
+project_group: development
 project_order: 4
 permalink: /projects/minecraft-kubernetes-lab/
+project_topic: minecraft
+project_list_title: "Minecraft 서버 운영 (2) : Kubernetes 실습"
 ---
 
 [← 1편: Minecraft 서버 운영 기록]({{ '/projects/minecraftgameserver/' | relative_url }})

@@ -321,6 +321,17 @@
   }
 }
 
+.project-card__kind {
+  align-self: flex-start;
+  margin-bottom: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  color: $link-color;
+  background: mix($link-color, $background-color, 8%);
+  border-radius: $border-radius;
+  font-size: $type-size-7;
+  font-weight: 700;
+}
+
 .project-card__title {
   margin: 0 0 0.75rem;
   font-size: 0.95em;
@@ -372,5 +383,24 @@
 @media (max-width: 37.5em) {
   .project-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.project-empty {
+  padding: 1rem;
+  color: $muted-text-color;
+  font-size: $type-size-6;
+  border: 1px dashed $border-color;
+  border-radius: $border-radius;
+}
+
+.project-section__type {
+  margin: 1rem 0 0.65rem;
+  color: $muted-text-color;
+  font-size: $type-size-6;
+
+  span {
+    margin-left: 0.35rem;
+    font-weight: 400;
   }
 }

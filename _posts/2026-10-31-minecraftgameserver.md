@@ -1,5 +1,5 @@
 ---
-title: "Minecraft를 이용한 grafana, Kubernetes 실습(1)."
+title: "Minecraft 서버 운영 (1) : 월드 개발 및 Grafana"
 excerpt: "지형 로딩 문제의 측정부터 사전 생성, 부하 시험, 공개 운영, 백업과 Discord 장애 알림까지 구축한 기록"
 categories:
   - projects
@@ -18,9 +18,11 @@ author_profile: false
 sidebar:
   nav: "docs"
 published: true
-project_group: personal
+project_group: development
 project_order: 3
 permalink: /projects/minecraftgameserver/
+project_topic: minecraft
+project_list_title: "Minecraft 서버 운영 (1) : 월드 개발 및 Grafana"
 ---
 
 ## 프로젝트 개요

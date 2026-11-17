@@ -19,10 +19,11 @@ author_profile: false
 sidebar:
   nav: "docs"
 published: true
-project_group: personal
+project_group: development
 project_order: 1
 project_list_title: "두 대의 PC로 홈서버 구축하기"
 permalink: /projects/dual-node-linux-homelab/
+project_topic: homelab
 ---
 
 ## 홈서버를 만들게 된 배경

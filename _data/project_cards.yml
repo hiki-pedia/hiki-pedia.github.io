@@ -10,6 +10,10 @@ minecraftgameserver:
   summary: Linux·Docker 기반 게임서버에 TCP 프록시, 자원 제한, 지표 수집·시각화, 검증을 포함한 자동 백업을 구성했습니다.
   technologies: [Linux, Docker Compose, Nginx TCP 프록시, Prometheus·Grafana, CPU·메모리 제한, 백업 자동화, WireGuard·SSH]
 
+"minecraftgameserver(2)":
+  summary: 기존 Compose 운영을 유지하며 별도 시험 환경에서 Kubernetes 배포·영속 저장소·복구를 검증할 계획입니다.
+  technologies: [Kubernetes, Paper, Service, ConfigMap·Secret, PVC·PV, Prometheus·Grafana]
+
 depression-life-analysis:
   summary: 생활·업무 요인과 우울증의 관계를 분석하고 예측 모델을 구축했습니다.
   technologies: [Python, 로지스틱 회귀, 의사결정나무, K-Means, StandardScaler]

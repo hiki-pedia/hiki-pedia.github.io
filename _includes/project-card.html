@@ -3,6 +3,9 @@
 {% assign project_technologies = card.technologies | default: project.tags %}
 <article class="project-card">
   <a class="project-card__link" href="{{ project.url | relative_url }}" aria-labelledby="project-title-{{ project.slug }}" aria-describedby="project-summary-{{ project.slug }}">
+    {% if project.project_group %}
+      <span class="project-card__kind">{% if project.project_group == "operations" %}운영{% else %}개발{% endif %}{% if project.project_status %} · {{ project.project_status }}{% endif %}</span>
+    {% endif %}
     <h3 id="project-title-{{ project.slug }}" class="project-card__title">{{ project.project_list_title | default: project.title }}</h3>
     <p id="project-summary-{{ project.slug }}" class="project-card__summary">{{ card.summary | default: project.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
     {% if project_technologies.size > 0 %}

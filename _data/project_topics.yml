@@ -1,0 +1,32 @@
+- id: minecraft
+  title: Minecraft 서버 개발·인프라 구축
+  menu_title: Minecraft 서버 개발
+  description: 월드·플러그인 개발, Grafana 모니터링과 Kubernetes 실습 기록입니다.
+- id: chartmaster
+  title: 주식 데이터 파이프라인·AWS 연동
+  menu_title: 주식 데이터·AWS
+  description: Airflow 수집 자동화부터 데이터 검증·예측·S3 복제까지 연결한 ChartMaster 프로젝트입니다.
+- id: homelab
+  title: 리눅스 홈서버·네트워크 구축
+  menu_title: 리눅스 홈서버
+  description: Ubuntu 서버 두 대와 내부망·WireGuard·SSH 원격 관리 환경을 구성했습니다.
+- id: sketchflow
+  title: UI 스케치 기반 웹 프로토타입 자동 생성
+  menu_title: 스케치 기반 웹 생성
+  description: 손그림과 자연어 요구사항으로 웹 화면·API·DB 초안을 생성하는 SketchFlow 프로젝트입니다.
+- id: erp
+  title: QR 코드 기반 자재 요청·ERP 재고 관리
+  menu_title: QR 자재·재고 관리
+  description: 생산 현장의 자재 호출을 관리자 화면과 ERP 데이터베이스에 연결했습니다.
+- id: real-estate
+  title: 아파트 실거래 데이터·지역 성장률 분석
+  menu_title: 부동산 실거래 분석
+  description: 전국 아파트 실거래 데이터로 지역별 성장 유형과 가격 격차를 분석했습니다.
+- id: io
+  title: 작업 유형 분류·I/O 스케줄링 비교
+  menu_title: I/O 스케줄링 비교
+  description: CPU·I/O 작업을 측정·분류하고 스케줄링별 대기·서비스 시간을 비교했습니다.
+- id: depression
+  title: 생활·업무 요인과 우울증 관계 분석
+  menu_title: 우울증 요인 분석
+  description: 회귀·트리 분류 모델과 군집 분석으로 변수별 관련성을 비교했습니다.

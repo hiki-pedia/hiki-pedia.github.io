@@ -11,9 +11,10 @@ tags:
   - io
   - machine-learning
   - python
-project_group: school
+project_group: development
 project_order: 2
 project_list_title: "I/O 최적화"
+project_topic: io
 ---
 
 작업 실행 특성을 측정하고 유형별 스케줄링 성능을 비교했다.

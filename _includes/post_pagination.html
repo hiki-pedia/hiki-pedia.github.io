@@ -1,8 +1,8 @@
 {% assign previous_post = page.previous %}
 {% assign next_post = page.next %}
 {% if site.show_learning_posts == false %}
-  {% unless previous_post.categories contains 'projects' %}{% assign previous_post = nil %}{% endunless %}
-  {% unless next_post.categories contains 'projects' %}{% assign next_post = nil %}{% endunless %}
+  {% unless previous_post.categories contains 'projects' or previous_post.categories contains 'career-log' %}{% assign previous_post = nil %}{% endunless %}
+  {% unless next_post.categories contains 'projects' or next_post.categories contains 'career-log' %}{% assign next_post = nil %}{% endunless %}
 {% endif %}
 {% if previous_post or next_post %}
   <nav class="pagination">

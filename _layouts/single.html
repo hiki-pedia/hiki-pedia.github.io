@@ -64,14 +64,17 @@ layout: default
 
   </article>
 
-  {% assign related_posts = site.related_posts %}
+  {% assign empty_posts = "" | split: "," %}
+  {% assign related_posts = site.related_posts | default: empty_posts %}
   {% if site.show_learning_posts == false %}
-    {% assign related_posts = related_posts | where_exp: "post", "post.categories contains 'projects'" %}
+    {% assign career_related_posts = related_posts | where_exp: "post", "post.categories contains 'career-log'" %}
+    {% assign related_posts = related_posts | where_exp: "post", "post.categories contains 'projects'" | concat: career_related_posts %}
   {% endif %}
   {% if related_posts.size == 0 %}
     {% assign related_posts = site.posts %}
     {% if site.show_learning_posts == false %}
-      {% assign related_posts = related_posts | where_exp: "post", "post.categories contains 'projects'" %}
+      {% assign career_related_posts = related_posts | where_exp: "post", "post.categories contains 'career-log'" %}
+    {% assign related_posts = related_posts | where_exp: "post", "post.categories contains 'projects'" | concat: career_related_posts %}
     {% endif %}
   {% endif %}
   {% if page.id and page.related and related_posts.size > 0 %}

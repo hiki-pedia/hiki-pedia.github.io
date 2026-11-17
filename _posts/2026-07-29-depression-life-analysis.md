@@ -10,9 +10,10 @@ tags:
   - machine-learning
   - python
   - depression
-project_group: school
+project_group: development
 project_order: 1
 project_list_title: "우울증과 삶의 상관관계 분석"
+project_topic: depression
 ---
 
 생활·업무 요인과 우울증의 관계를 분석하고 분류 모델을 만들었다.

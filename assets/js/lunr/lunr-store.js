@@ -9,7 +9,8 @@ var store = [
     {%- endif -%}
     {%- assign docs = c.docs | where_exp:'doc','doc.search != false' -%}
     {%- if site.show_learning_posts == false and c.label == 'posts' -%}
-      {%- assign docs = docs | where_exp:'doc','doc.categories contains "projects"' -%}
+      {%- assign career_docs = docs | where_exp:'doc','doc.categories contains "career-log"' -%}
+      {%- assign docs = docs | where_exp:'doc','doc.categories contains "projects"' | concat: career_docs -%}
     {%- endif -%}
     {%- for doc in docs -%}
       {%- if doc.header.teaser -%}

@@ -62,7 +62,10 @@ tags:
 
 포스트 공통 설정인 `layout`, `toc`, `sidebar`, `author_profile`은 `_config.yml`의 `defaults`에서 관리합니다.
 
-프로젝트는 `project_group: personal` 또는 `project_group: school`로 분류하고 `project_order` 순서로 표시합니다.
+각 프로젝트 아래의 글을 `project_group: development`(개발) 또는 `project_group: operations`(운영)으로 구분합니다.
+상단 Projects 메뉴의 전체 보기는 `/projects/`에 모든 프로젝트를 모아 표시하고, 주제별 메뉴는 같은 페이지의 해당 영역으로 이동합니다. 주제는 `_data/project_topics.yml`과 `project_topic`으로 연결하고, 글은 `project_order` 오름차순으로 표시합니다.
+계획 중인 글은 `project_status: 계획`을 추가합니다. 새 프로젝트는 `_data/project_topics.yml`과 왼쪽 목차에 추가합니다.
+취업 기록은 `categories: [career-log]`로 작성하면 Career Log에 모입니다.
 카드에 쓰는 설명과 기술 목록은 `_data/project_cards.yml`에서 글의 파일명 슬러그를 기준으로 관리합니다.
 
 포폴 제출 중에는 `_config.yml`의 `show_learning_posts: false`로 학습 메뉴와 검색·관련 글 노출을 숨깁니다.

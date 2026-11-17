@@ -11,9 +11,10 @@ tags:
   - postgresql
   - stock-data
   - mlops
-project_group: personal
+project_group: development
 project_order: 2
 project_list_title: "Airflow와 AWS를 활용한 주식 데이터 기반 AI 분석 시스템"
+project_topic: chartmaster
 ---
 
 ## 개요

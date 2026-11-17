@@ -12,9 +12,10 @@ tags:
   - mssql
   - qr
   - inventory
-project_group: school
+project_group: development
 project_order: 3
 project_list_title: "QR코드를 이용한 ERP 통합 기반 재고, 자재 자동 호출 시스템"
+project_topic: erp
 ---
 
 QR 자재 호출을 ERP 데이터와 연결한 재고·자재 요청 관리 시스템.

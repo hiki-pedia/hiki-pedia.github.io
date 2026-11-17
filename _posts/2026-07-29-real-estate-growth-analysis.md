@@ -14,9 +14,10 @@ tags:
   - clustering
   - xgboost
   - postgresql
-project_group: school
+project_group: development
 project_order: 5
 project_list_title: "부동산 매매가격 데이터 기반 도시 성장률 분석"
+project_topic: real-estate
 ---
 
 전국 아파트 실거래 데이터로 지역별 성장 유형과 가격 격차를 분석.

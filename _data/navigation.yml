@@ -5,6 +5,8 @@ main:
   - title: "backend"
     url: /backend/
     learning: true
+  - title: "Career Log"
+    url: /career-log/
   - title: "Projects"
     url: /projects/
   - title: "mypage"
@@ -14,15 +16,23 @@ main:
     description: "mypage"
 
 docs:
-  - title: "CONTENTS"
+  - title: "PROJECTS"
     children:
-      - title: "frontend"
-        url: /frontend/
-        learning: true
-      - title: "backend"
-        url: /backend/
-        learning: true
-      - title: "개인 프로젝트"
-        url: /projects/#personal-projects
-      - title: "학업 프로젝트"
-        url: /projects/#academic-projects
+      - title: "전체 프로젝트"
+        url: /projects/
+      - title: "Minecraft 서버 개발"
+        url: /projects/#minecraft
+      - title: "주식 데이터·AWS"
+        url: /projects/#chartmaster
+      - title: "리눅스 홈서버"
+        url: /projects/#homelab
+      - title: "스케치 기반 웹 생성"
+        url: /projects/#sketchflow
+      - title: "QR 자재·재고 관리"
+        url: /projects/#erp
+      - title: "부동산 실거래 분석"
+        url: /projects/#real-estate
+      - title: "I/O 스케줄링 비교"
+        url: /projects/#io
+      - title: "우울증 요인 분석"
+        url: /projects/#depression

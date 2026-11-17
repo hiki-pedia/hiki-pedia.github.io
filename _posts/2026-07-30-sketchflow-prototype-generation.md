@@ -14,9 +14,10 @@ tags:
   - nextjs
   - fastapi
   - sqlite
-project_group: school
+project_group: development
 project_order: 6
 project_list_title: "스케치 기반 자동 동적 소프트웨어 프로토타입 생성 시스템"
+project_topic: sketchflow
 ---
 
 스케치와 요구사항을 기반으로 LLM을 기반으로 실행 가능한 동적 웹 프로토타입을 생성하는 캡스톤 프로젝트.
