@@ -223,8 +223,6 @@ target_positive_5d_return = future_5d_return > 0
 
 초기 확인 당시에는 자산 29개, raw 약 21MB, processed 약 64MB, 성공 실행 34건과 datasets 712행을 기록했다. 이 수치는 현재 용량·실행 횟수가 아니라 초기 구현 시점의 결과다.
 
-<!-- [사진 삽입·선택: PostgreSQL 조회 결과 — datasets의 symbol, row_count, start_date, end_date와 pipeline_runs의 실행 상태를 보여준다. 비밀번호·접속 문자열은 제외한다. 현재 조회 결과라면 위 초기 수치와 구분해 촬영일을 적는다.] -->
-
 ## Phase 2. Airflow·Docker
 
 ### 시장별 실행
@@ -279,8 +277,6 @@ Electron이 서버2 파일·DB에 직접 연결하지 않도록 서버1 FastAPI�
 Mock과 Live 출처를 구분하고 Live 연결 실패를 Mock 성공 화면으로 숨기지 않았다. 데이터가 최신인 것과 Airflow 실패 이력이 없는 것은 다르므로 상태도 따로 표시한다.
 
 이 구조 덕분에 저장소와 인증 정보는 서버 쪽에 두고, 로컬 PC는 API 주소만 설정해 결과를 볼 수 있다. 현재 API 자체 인증은 없으므로 LAN/VPN 내부에서만 사용한다. CORS는 사용자 인증의 대체 수단이 아니다.
-
-<!-- [사진 삽입·선택: FastAPI /docs — 가격 API의 요청과 실제 200 응답 일부가 함께 보이도록 캡처한다. 엔드포인트 목록만 길게 찍기보다 symbol과 날짜별 OHLCV 응답을 보여준다.] -->
 
 ## Phase 5. pykrx·거래소 캘린더
 
@@ -386,5 +382,3 @@ Transformer-lite를 자동화 기준 모델로 선택했지만 ROC-AUC가 0.5 �
 ### Phase 10. RAG
 
 뉴스·문서 검색과 RAG 기반 근거 요약은 후속 확장으로 남긴다. 현재는 보류 상태이며 구현한 기능으로 다루지 않는다.
-
-Lambda 웹 전환과 RDS·Multi-AZ 상시 운영도 보류한다. 지금은 기능 수를 늘리기보다 구현한 흐름이 실제로 반복 실행되고 복구 가능한지 증거를 남기는 데 집중한다.
